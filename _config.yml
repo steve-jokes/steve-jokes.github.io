@@ -7,7 +7,8 @@ title: Memphis' Talk
 subtitle: words that cross the skills and the mind
 description: Memphis 的技术小站还有他所认识的世界
 author: Memphis Wang
-language: zh-CN
+#language: zh-CN
+language: zh-Hans
 timezone: Asia/Shanghai
 
 # URL
@@ -63,7 +64,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
