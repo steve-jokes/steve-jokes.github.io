@@ -24,8 +24,8 @@ date: 2017-01-29 00:24:55
 
 ### 隐形的坑
 值得注意的有如下几点:
-- 通过 `npm install hexo-deployer-git` 安装 git 部署器之后, 执行 `hexo deploy`, 出现 `ERROR Deployer not found: git` 错误, 需要安装 `npm install hexo-deployer-git --save` 解决
-- `hexo init` 会覆盖当前目录, **导致 Git 仓库消失**, 请尽量针对空目录初始化 hexo 仓库
+- Hexo 的 git 部署器的安装指令已经更新为 `npm install hexo-deployer-git --save`, 如果你根据旧博客的指令, 而不是官网最新指令的话, 执行 `hexo deploy` 之后会得到 `ERROR Deployer not found: git` 错误.
+- `hexo init` 会覆盖当前目录, **导致 Git 仓库消失**, 请尽量针对空目录初始化 hexo 仓库.
 
 ### Hexo 的工作方式
 作为用户主要关注这么几个内容:
