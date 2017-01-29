@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://www.memphis.wang/2017/01/29/起源-Hexo/index.html">
 <meta property="og:site_name" content="Memphis' Talk">
 <meta property="og:description" content="Hexo 是一个基于 Node.Js 实现的快速、简洁且高效的博客框架. 框架搭建便捷, 能够高效生成静态博客, 通过简易的配置就可以实现博客的部署与更新, 配合 Markdown 语法的文本, 让你更加专注于内容本身.">
-<meta property="og:updated_time" content="2017-01-29T17:25:48.000Z">
+<meta property="og:updated_time" content="2017-01-29T17:32:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="起源:Hexo">
 <meta name="twitter:description" content="Hexo 是一个基于 Node.Js 实现的快速、简洁且高效的博客框架. 框架搭建便捷, 能够高效生成静态博客, 通过简易的配置就可以实现博客的部署与更新, 配合 Markdown 语法的文本, 让你更加专注于内容本身.">
@@ -372,9 +372,9 @@
 <h3 id="Hexo-的工作方式"><a href="#Hexo-的工作方式" class="headerlink" title="Hexo 的工作方式"></a>Hexo 的工作方式</h3><p>作为用户主要关注这么几个内容:</p>
 <ul>
 <li>Hexo 提供了配置文件 _config.yml 让用户可以修改博客的相关设置. 例如名称, 简介, 主题, 每页显示文章数等. </li>
-<li>使用 <code>hexo new</code> 指令创建新的博客, 你也可以手动创建. 博文的头部中有相关的参数如 Tag, Category 可以设置.</li>
-<li>使用 <code>hexo generate</code> 生成静态的网页文件到 public/ 文件夹中, 这就是你最终用于部署到服务器上的博客内容.</li>
-<li>使用 <code>hexo deploy</code> 将生成的博客部署到指定的服务器. 有多种方式选择. 新时代的我们当然用 Git 啦!</li>
+<li><code>hexo new</code> 指令创建新的博客, 你也可以手动创建. 博文的头部中有相关的参数如 Tag, Category 可以设置.</li>
+<li><code>hexo generate</code> 生成静态的网页文件到 public/ 文件夹中, 这就是你最终用于部署到服务器上的博客内容.</li>
+<li><code>hexo deploy</code> 将生成的博客部署到指定的服务器. 有多种方式选择. 新时代的我们当然用 Git 啦!</li>
 </ul>
 <h3 id="Hexo-仓库管理最佳实践"><a href="#Hexo-仓库管理最佳实践" class="headerlink" title="Hexo 仓库管理最佳实践"></a>Hexo 仓库管理最佳实践</h3><p>Hexo 项目在 <code>npm install</code> 之后, 在根目录下自动生成了一个 .gitignore 文件, 以此来忽略 public 等文件夹, 这说明 Hexo 项目本身也推荐我们使用 Git 来管理, 而且实际上也非常的适合使用. 再结合 Github 推出的 <a href="https://pages.github.com/" target="_blank" rel="external">GitPages</a> 功能, 我们可以将我们的博客部署到我们的 GitPages 上. 由于 GitPages 本身会占用掉我们的 Github 一个独立而且特殊的仓库 <strong>username.github.io</strong>, 看起来只能将 hexo 源文件和 hexo 生成的博客内容放在不同的 Git 仓库中进行管理了. 但是其实换一个思路, 我们可以在 <strong>username.github.io</strong> 这个仓库中创建两个完全独立不相干的分支, master 分支用于博客内容的部署, GitPage 会读取这部分内容进行网页的展示, Hexo 分支用于管理 Hexo 项目的源文件, 这样一个仓库就解决了源码和展示两个问题了!</p>
 <p>假如更换了陌生的环境, 比如在新买的服务器上需要还原博客的书写环境, 只需要重新安装 Hexo, 找一个目录 clone 自己的 <strong>username.github.io</strong> 重新 <code>npm install</code> 就可以了(不需要重新 init, 因为仓库上已经初始化过了)</p>
