@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://www.memphis.wang/2017/01/29/起源-Hexo/index.html">
 <meta property="og:site_name" content="Memphis' Talk">
 <meta property="og:description" content="Hexo 是一个基于 Node.Js 实现的快速、简洁且高效的博客框架. 框架搭建便捷, 能够高效生成静态博客, 通过简易的配置就可以实现博客的部署与更新, 配合 Markdown 语法的文本, 让你更加专注于内容本身.">
-<meta property="og:updated_time" content="2017-01-28T18:05:57.000Z">
+<meta property="og:updated_time" content="2017-01-29T15:10:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="起源:Hexo">
 <meta name="twitter:description" content="Hexo 是一个基于 Node.Js 实现的快速、简洁且高效的博客框架. 框架搭建便捷, 能够高效生成静态博客, 通过简易的配置就可以实现博客的部署与更新, 配合 Markdown 语法的文本, 让你更加专注于内容本身.">
@@ -366,8 +366,8 @@
 <h3 id="Hexo-的安装"><a href="#Hexo-的安装" class="headerlink" title="Hexo 的安装"></a>Hexo 的安装</h3><p>官网描述得简介明了, 并且会得到及时的更新, 请关注官网的说明.</p>
 <h3 id="隐形的坑"><a href="#隐形的坑" class="headerlink" title="隐形的坑"></a>隐形的坑</h3><p>值得注意的有如下几点:</p>
 <ul>
-<li>通过 <code>npm install hexo-deployer-git</code> 安装 git 部署器之后, 执行 <code>hexo deploy</code>, 出现 <code>ERROR Deployer not found: git</code> 错误, 需要安装 <code>npm install hexo-deployer-git --save</code> 解决</li>
-<li><code>hexo init</code> 会覆盖当前目录, <strong>导致 Git 仓库消失</strong>, 请尽量针对空目录初始化 hexo 仓库</li>
+<li>Hexo 的 git 部署器的安装指令已经更新为 <code>npm install hexo-deployer-git --save</code>, 如果你根据旧博客的指令, 而不是官网最新指令的话, 执行 <code>hexo deploy</code> 之后会得到 <code>ERROR Deployer not found: git</code> 错误.</li>
+<li><code>hexo init</code> 会覆盖当前目录, <strong>导致 Git 仓库消失</strong>, 请尽量针对空目录初始化 hexo 仓库.</li>
 </ul>
 <h3 id="Hexo-的工作方式"><a href="#Hexo-的工作方式" class="headerlink" title="Hexo 的工作方式"></a>Hexo 的工作方式</h3><p>作为用户主要关注这么几个内容:</p>
 <ul>
