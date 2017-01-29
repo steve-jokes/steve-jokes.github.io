@@ -69,6 +69,9 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-    type: git
-    repo: git@github.com:steve-jokes/steve-jokes.github.io.git 
-    branch: master
+- type: git
+  repo: git@github.com:steve-jokes/steve-jokes.github.io.git 
+  branch: master
+- type: git
+  repo: ssh://memphis@139.162.102.236/home/memphis/Document/repo/MyBlog
+  branch: master
