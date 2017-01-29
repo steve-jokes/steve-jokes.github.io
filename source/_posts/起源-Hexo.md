@@ -30,9 +30,9 @@ date: 2017-01-29 00:24:55
 ### Hexo 的工作方式
 作为用户主要关注这么几个内容:
 - Hexo 提供了配置文件 \_config.yml 让用户可以修改博客的相关设置. 例如名称, 简介, 主题, 每页显示文章数等. 
-- 使用 `hexo new` 指令创建新的博客, 你也可以手动创建. 博文的头部中有相关的参数如 Tag, Category 可以设置.
-- 使用 `hexo generate` 生成静态的网页文件到 public/ 文件夹中, 这就是你最终用于部署到服务器上的博客内容.
-- 使用 `hexo deploy` 将生成的博客部署到指定的服务器. 有多种方式选择. 新时代的我们当然用 Git 啦!
+- `hexo new` 指令创建新的博客, 你也可以手动创建. 博文的头部中有相关的参数如 Tag, Category 可以设置.
+- `hexo generate` 生成静态的网页文件到 public/ 文件夹中, 这就是你最终用于部署到服务器上的博客内容.
+- `hexo deploy` 将生成的博客部署到指定的服务器. 有多种方式选择. 新时代的我们当然用 Git 啦!
 
 ### Hexo 仓库管理最佳实践
 Hexo 项目在 `npm install` 之后, 在根目录下自动生成了一个 .gitignore 文件, 以此来忽略 public 等文件夹, 这说明 Hexo 项目本身也推荐我们使用 Git 来管理, 而且实际上也非常的适合使用. 再结合 Github 推出的 [GitPages](https://pages.github.com/) 功能, 我们可以将我们的博客部署到我们的 GitPages 上. 由于 GitPages 本身会占用掉我们的 Github 一个独立而且特殊的仓库 **username.github.io**, 看起来只能将 hexo 源文件和 hexo 生成的博客内容放在不同的 Git 仓库中进行管理了. 但是其实换一个思路, 我们可以在 **username.github.io** 这个仓库中创建两个完全独立不相干的分支, master 分支用于博客内容的部署, GitPage 会读取这部分内容进行网页的展示, Hexo 分支用于管理 Hexo 项目的源文件, 这样一个仓库就解决了源码和展示两个问题了!
