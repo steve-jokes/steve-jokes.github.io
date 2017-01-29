@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo,博客,markdown," />
+  <meta name="keywords" content="hexo,博客,nginx," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="Hexo 是一个基于 Node.Js 实现的快速、简洁且高效的博客框架. 框架搭建便捷, 能够高效生成静态博客, 通过简易的配置就可以实现博客的部署与更新, 配合 Markdown 语法的文本, 让你更加专注于内容本身.">
+<meta name="description" content="既然拥有了自己的 VPS, 单纯的部署到 GitPages 上这种 easy 的方式当然不能满足我. 将其最终部署到 VPS 上, 通过 Memphis.Wang 这个域名来访问才是王道. 今天就来完善一下我的 Hexo 部署作业. 一番折腾下来并不容易, 简单记录分享一下. (均在 CentOS 7 下完成)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="起源:Hexo">
-<meta property="og:url" content="http://www.memphis.wang/2017/01/29/起源-Hexo/index.html">
+<meta property="og:title" content="Hexo 博客的自动化部署">
+<meta property="og:url" content="http://www.memphis.wang/2017/01/30/Hexo-博客的自动化部署/index.html">
 <meta property="og:site_name" content="Memphis' Talk">
-<meta property="og:description" content="Hexo 是一个基于 Node.Js 实现的快速、简洁且高效的博客框架. 框架搭建便捷, 能够高效生成静态博客, 通过简易的配置就可以实现博客的部署与更新, 配合 Markdown 语法的文本, 让你更加专注于内容本身.">
-<meta property="og:updated_time" content="2017-01-29T17:32:13.000Z">
+<meta property="og:description" content="既然拥有了自己的 VPS, 单纯的部署到 GitPages 上这种 easy 的方式当然不能满足我. 将其最终部署到 VPS 上, 通过 Memphis.Wang 这个域名来访问才是王道. 今天就来完善一下我的 Hexo 部署作业. 一番折腾下来并不容易, 简单记录分享一下. (均在 CentOS 7 下完成)">
+<meta property="og:updated_time" content="2017-01-29T19:29:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="起源:Hexo">
-<meta name="twitter:description" content="Hexo 是一个基于 Node.Js 实现的快速、简洁且高效的博客框架. 框架搭建便捷, 能够高效生成静态博客, 通过简易的配置就可以实现博客的部署与更新, 配合 Markdown 语法的文本, 让你更加专注于内容本身.">
+<meta name="twitter:title" content="Hexo 博客的自动化部署">
+<meta name="twitter:description" content="既然拥有了自己的 VPS, 单纯的部署到 GitPages 上这种 easy 的方式当然不能满足我. 将其最终部署到 VPS 上, 通过 Memphis.Wang 这个域名来访问才是王道. 今天就来完善一下我的 Hexo 部署作业. 一番折腾下来并不容易, 简单记录分享一下. (均在 CentOS 7 下完成)">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://www.memphis.wang/2017/01/29/起源-Hexo/"/>
+  <link rel="canonical" href="http://www.memphis.wang/2017/01/30/Hexo-博客的自动化部署/"/>
 
 
 
 
 
-  <title> 起源:Hexo | Memphis' Talk </title>
+  <title> Hexo 博客的自动化部署 | Memphis' Talk </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -240,7 +240,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://www.memphis.wang/2017/01/29/起源-Hexo/">
+  <link itemprop="mainEntityOfPage" href="http://www.memphis.wang/2017/01/30/Hexo-博客的自动化部署/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Memphis Wang">
@@ -264,7 +264,7 @@
             
             
               
-                起源:Hexo
+                Hexo 博客的自动化部署
               
             
           </h1>
@@ -279,8 +279,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-29T00:24:55+08:00">
-                2017-01-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-30T03:29:05+08:00">
+                2017-01-30
               </time>
             
 
@@ -359,38 +359,43 @@
       
 
       
-        <p><a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> 是一个基于 Node.Js 实现的快速、简洁且高效的博客框架. 框架搭建便捷, 能够高效生成静态博客, 通过简易的配置就可以实现博客的部署与更新, 配合 Markdown 语法的文本, 让你更加专注于内容本身. </p>
+        <p>既然拥有了自己的 VPS, 单纯的部署到 GitPages 上这种 easy 的方式当然不能满足我. 将其最终部署到 VPS 上, 通过 <a href="http://memphis.wang/" target="_blank" rel="external">Memphis.Wang</a> 这个域名来访问才是王道. 今天就来完善一下我的 Hexo 部署作业. 一番折腾下来并不容易, 简单记录分享一下. (均在 CentOS 7 下完成)</p>
 <a id="more"></a>
-<p>昨天是除夕, 在 Linode 上购买了人生第一台 VPS, 将自己的域名 memphis.wang 解析到了这个自己的专属 IP 下, 并且在上面部署了一台 CentOS 7, 更新了 yum 源 EPEL, 更新了 4.9 的内核, 换上了 Google 新推出的 BBR 拥塞控制算法. 最重要的是搭起了一个真正属于自己的 SS 服务器, 这感觉真的是太棒了. 原来一切近在眼前的技术, 只是止步于我不去实现. 工作太忙算得上一个客观原因, 但是主观上我并没有推动这件事发生, 导致其迟到了一年. </p>
-<p>称热打铁, 今天赶在大年初一, 一便将自己的个人博客搭建起来. 选择 Hexo 并没有太多的考虑, 因为看到 <a href="https://zilongshanren.com/blog/2015-08-02-migrate-blog-to-hexo.html" target="_blank" rel="external">子龙山人的这篇博客</a> 并且使用我钟爱的命令行操作的方式来构建, 部署, 编辑博客的方式. 便不再去考虑其他的选项了. 有时候瞎折腾会忘记的出发的目的, 如果有前辈趟好了坑, 就照着这个坑快速前进就对了!</p>
-<h3 id="Hexo-的安装"><a href="#Hexo-的安装" class="headerlink" title="Hexo 的安装"></a>Hexo 的安装</h3><p>官网描述得简介明了, 并且会得到及时的更新, 请关注官网的说明.</p>
-<h3 id="隐形的坑"><a href="#隐形的坑" class="headerlink" title="隐形的坑"></a>隐形的坑</h3><p>值得注意的有如下几点:</p>
+<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><p>既然要通过访问我的 VPS 来打开博客, 自然需要一个靠谱的服务器啦. 出于习惯和周围同事的技术栈, 我选用 <a href="https://www.nginx.com/" target="_blank" rel="external">Nginx</a> 作为自己的一号方案, 安装部署起来都比较方便. 毕竟后端不是我的专业, 所以我直接通过 yum 包管理来安装一个落后的稳定版本. 通过 <code>nginx</code> 命令启动之后, 网页访问自己域名会有 Nginx 的默认页面出现, 安装成功.</p>
+<h2 id="VPS-上的-Git-仓库准备"><a href="#VPS-上的-Git-仓库准备" class="headerlink" title="VPS 上的 Git 仓库准备"></a>VPS 上的 Git 仓库准备</h2><p>完成 Git 形式的博客部署, 需要在 VPS 上准备两个仓库:</p>
 <ul>
-<li>Hexo 的 git 部署器的安装指令已经更新为 <code>npm install hexo-deployer-git --save</code>, 如果你根据旧博客的指令, 而不是官网最新指令的话, 执行 <code>hexo deploy</code> 之后会得到 <code>ERROR Deployer not found: git</code> 错误.</li>
-<li><code>hexo init</code> 会覆盖当前目录, <strong>导致 Git 仓库消失</strong>, 请尽量针对空目录初始化 hexo 仓库.</li>
+<li>一个 Git Bare 仓库, 没有工作区, 用于接受 Hexo 的部署推送, 触发 Bare 仓库的 hook 脚本, 更新服务器内容.</li>
+<li>一个标准 Git 仓库, 在 hook 脚本的控制下, 从 Bare 仓库中导出, 带工作区, 存放我们最终用于部署的博客内容.</li>
 </ul>
-<h3 id="Hexo-的工作方式"><a href="#Hexo-的工作方式" class="headerlink" title="Hexo 的工作方式"></a>Hexo 的工作方式</h3><p>作为用户主要关注这么几个内容:</p>
-<ul>
-<li>Hexo 提供了配置文件 _config.yml 让用户可以修改博客的相关设置. 例如名称, 简介, 主题, 每页显示文章数等. </li>
-<li><code>hexo new</code> 指令创建新的博客, 你也可以手动创建. 博文的头部中有相关的参数如 Tag, Category 可以设置.</li>
-<li><code>hexo generate</code> 生成静态的网页文件到 public/ 文件夹中, 这就是你最终用于部署到服务器上的博客内容.</li>
-<li><code>hexo deploy</code> 将生成的博客部署到指定的服务器. 有多种方式选择. 新时代的我们当然用 Git 啦!</li>
-</ul>
-<h3 id="Hexo-仓库管理最佳实践"><a href="#Hexo-仓库管理最佳实践" class="headerlink" title="Hexo 仓库管理最佳实践"></a>Hexo 仓库管理最佳实践</h3><p>Hexo 项目在 <code>npm install</code> 之后, 在根目录下自动生成了一个 .gitignore 文件, 以此来忽略 public 等文件夹, 这说明 Hexo 项目本身也推荐我们使用 Git 来管理, 而且实际上也非常的适合使用. 再结合 Github 推出的 <a href="https://pages.github.com/" target="_blank" rel="external">GitPages</a> 功能, 我们可以将我们的博客部署到我们的 GitPages 上. 由于 GitPages 本身会占用掉我们的 Github 一个独立而且特殊的仓库 <strong>username.github.io</strong>, 看起来只能将 hexo 源文件和 hexo 生成的博客内容放在不同的 Git 仓库中进行管理了. 但是其实换一个思路, 我们可以在 <strong>username.github.io</strong> 这个仓库中创建两个完全独立不相干的分支, master 分支用于博客内容的部署, GitPage 会读取这部分内容进行网页的展示, Hexo 分支用于管理 Hexo 项目的源文件, 这样一个仓库就解决了源码和展示两个问题了!</p>
-<p>假如更换了陌生的环境, 比如在新买的服务器上需要还原博客的书写环境, 只需要重新安装 Hexo, 找一个目录 clone 自己的 <strong>username.github.io</strong> 重新 <code>npm install</code> 就可以了(不需要重新 init, 因为仓库上已经初始化过了)</p>
-<h4 id="附文章发布时-博主的-Hexo-环境"><a href="#附文章发布时-博主的-Hexo-环境" class="headerlink" title="附文章发布时, 博主的 Hexo 环境"></a>附文章发布时, 博主的 Hexo 环境</h4><ul>
-<li>hexo: 3.2.2</li>
-<li>hexo-cli: 1.0.2</li>
-<li>os: Darwin 16.3.0 darwin x64</li>
-<li>http_parser: 2.5.0</li>
-<li>node: 4.0.0</li>
-<li>v8: 4.5.103.30</li>
-<li>uv: 1.7.3</li>
-<li>zlib: 1.2.8</li>
-<li>ares: 1.10.1-DEV</li>
-<li>modules: 46</li>
-<li>openssl: 1.0.2d</li>
-</ul>
+<p>简单地说, 需要在 VPS 上选择一个目录:</p>
+<ol>
+<li><code>git init --bare MyBlog</code> (<em>命名随意</em>)</li>
+<li><code>git init MyBlogPublish</code> (<em>同上</em>)</li>
+</ol>
+<h2 id="配置-Nginx-服务器"><a href="#配置-Nginx-服务器" class="headerlink" title="配置 Nginx 服务器"></a>配置 Nginx 服务器</h2><p><code>vim /etc/nginx/nginx.conf</code>, 指定 root 参数到 /path/2/MyBlogPublish, 我们的服务器将以这个仓库作为根目录.</p>
+<h2 id="Hexo-配置部署选项"><a href="#Hexo-配置部署选项" class="headerlink" title="Hexo 配置部署选项"></a>Hexo 配置部署选项</h2><p>完成服务器 Git 仓库准备之后, 就可以在 <strong>本地机器</strong> 的 Hexo 项目中配置对于这台服务器的 Git 形式部署了, 编辑 Hexo 项目的 _config.yml 文件, 增加 deploy 选项:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- type: git</div><div class="line">  repo: ssh://username@your_vps_ip_address/path/2/MyBlog</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p>如此一来, 当我通过 <code>hexo deploy</code> 执行部署命令时, 我的静态博客文件都会被推送到我指定的 VPS 机器的 Bare 仓库 MyBlog 上, 注意这里要选用 Bare 仓库, 否则推送会失败. </p>
+<h2 id="通过-Bare-仓库的-hook-脚本完成博客的部署"><a href="#通过-Bare-仓库的-hook-脚本完成博客的部署" class="headerlink" title="通过 Bare 仓库的 hook 脚本完成博客的部署"></a>通过 Bare 仓库的 hook 脚本完成博客的部署</h2><p>博客推送到 Bare 仓库后, 会触发一个 post-receive 事件, 我们可以在这个脚本中注册我们的部署指令:</p>
+<p><code>vim MyBlog/hooks/post-receive</code></p>
+<p>增加以下内容:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">git --work-tree=/path/2/MyBlogPublish --git-dir=/path/2/MyBlog checkout -f</div><div class="line">sudo nginx -s reload</div></pre></td></tr></table></figure>
+<p>执行 <code>chmod +x post-receive</code> 为这个 hook 增加执行权限.</p>
+<hr>
+<p>这么一来, 当我在本机执行 <code>hexo deploy</code> 后会发生这么几件事: </p>
+<ol>
+<li>hexo 将静态博客以 git push 形式退送给我的 MyBlog Bare 仓库</li>
+<li>触发 Bare 仓库的 post-receive 事件, 执行 hook 脚本</li>
+<li>脚本从 MyBlog 中导出了一个 MyBlogPublish 仓库, 其工作区中包含了静态博客的内容</li>
+<li>Nginx 发生了重新载入, 将 MyBlogPublish 仓库下的内容更新到了服务器上.</li>
+</ol>
+<p>一切看起来这么完美, 但这件美好的事情可能并没有在你身上发生, 因为有如下几个坑需要填平:</p>
+<h2 id="坑s"><a href="#坑s" class="headerlink" title="坑s"></a>坑s</h2><h4 id="修改-Nginx-root-目录以后-Nginx-出现了-403-错误"><a href="#修改-Nginx-root-目录以后-Nginx-出现了-403-错误" class="headerlink" title="修改 Nginx root 目录以后, Nginx 出现了 403 错误"></a>修改 Nginx root 目录以后, Nginx 出现了 403 错误</h4><p>这是因为 MyBlog 目录的所属用户导致, 由于我不是后端, 对安全性需求几乎为 0, 所以粗暴的方法是修改 Nginx 服务器配置 <code>/etc/nginx/nginx.conf</code>, 将 user 设为 root.</p>
+<h4 id="MyBlogPublish-生成成功-Nginx-更新失败"><a href="#MyBlogPublish-生成成功-Nginx-更新失败" class="headerlink" title="MyBlogPublish 生成成功, Nginx 更新失败"></a>MyBlogPublish 生成成功, Nginx 更新失败</h4><p>由于 Nginx 的运行要访问几个系统目录, 所以需要通过 sudo 来运行 Nginx, 但是由于整个部署过程是一个自动化流程, hook 使用脚本来完成工作, 没有机会让我们在本地机器上为 VPS 上的部署输入密码, 所以需要去除对 Nginx 命令 sudo 时的密码要求:</p>
+<p>登录服务器修改 <code>/etc/sudoers</code> 文件, 增加一行 <code>username ALL=NOPASSWD: /usr/sbin/nginx</code></p>
+<p>此外这套流程多处使用 ssh 登录 VPS, 为了避免频繁输入密码的麻烦, 建议使用 rsa key 方式登录, 具体办法 Google 一下, 不再详述 </p>
+<p>–</p>
+<p>至此, 我完成了对 hexo 部署流程的封装, 可以一体化控制, 只需要执行 hexo 的部署命令, 就能将博客更新到我的 GitPages 和 VPS 上. 之后我只需要专注与我的博客内容, 不需要关心这之后的一套部署细节. 甚至可能很长一段时间都不需要登录我的 VPS 了.</p>
 
       
     </div>
@@ -418,7 +423,7 @@
           
             <a href="/tags/博客/" rel="tag"># 博客</a>
           
-            <a href="/tags/markdown/" rel="tag"># markdown</a>
+            <a href="/tags/nginx/" rel="tag"># nginx</a>
           
         </div>
       
@@ -427,15 +432,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/01/29/起源-Hexo/" rel="next" title="起源:Hexo">
+                <i class="fa fa-chevron-left"></i> 起源:Hexo
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/30/Hexo-博客的自动化部署/" rel="prev" title="Hexo 博客的自动化部署">
-                Hexo 博客的自动化部署 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -558,7 +563,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-的安装"><span class="nav-number">1.</span> <span class="nav-text">Hexo 的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐形的坑"><span class="nav-number">2.</span> <span class="nav-text">隐形的坑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-的工作方式"><span class="nav-number">3.</span> <span class="nav-text">Hexo 的工作方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-仓库管理最佳实践"><span class="nav-number">4.</span> <span class="nav-text">Hexo 仓库管理最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#附文章发布时-博主的-Hexo-环境"><span class="nav-number">4.1.</span> <span class="nav-text">附文章发布时, 博主的 Hexo 环境</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器"><span class="nav-number">1.</span> <span class="nav-text">服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VPS-上的-Git-仓库准备"><span class="nav-number">2.</span> <span class="nav-text">VPS 上的 Git 仓库准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-Nginx-服务器"><span class="nav-number">3.</span> <span class="nav-text">配置 Nginx 服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-配置部署选项"><span class="nav-number">4.</span> <span class="nav-text">Hexo 配置部署选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过-Bare-仓库的-hook-脚本完成博客的部署"><span class="nav-number">5.</span> <span class="nav-text">通过 Bare 仓库的 hook 脚本完成博客的部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坑s"><span class="nav-number">6.</span> <span class="nav-text">坑s</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改-Nginx-root-目录以后-Nginx-出现了-403-错误"><span class="nav-number">6.0.1.</span> <span class="nav-text">修改 Nginx root 目录以后, Nginx 出现了 403 错误</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyBlogPublish-生成成功-Nginx-更新失败"><span class="nav-number">6.0.2.</span> <span class="nav-text">MyBlogPublish 生成成功, Nginx 更新失败</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
