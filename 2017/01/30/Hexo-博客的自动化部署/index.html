@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://www.memphis.wang/2017/01/30/Hexo-博客的自动化部署/index.html">
 <meta property="og:site_name" content="Memphis' Talk">
 <meta property="og:description" content="既然拥有了自己的 VPS, 单纯的部署到 GitPages 上这种 easy 的方式当然不能满足我. 将其最终部署到 VPS 上, 通过 Memphis.Wang 这个域名来访问才是王道. 今天就来完善一下我的 Hexo 部署作业. 一番折腾下来并不容易, 简单记录分享一下. (均在 CentOS 7 下完成)">
-<meta property="og:updated_time" content="2017-01-29T19:29:06.000Z">
+<meta property="og:updated_time" content="2017-01-29T19:32:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 博客的自动化部署">
 <meta name="twitter:description" content="既然拥有了自己的 VPS, 单纯的部署到 GitPages 上这种 easy 的方式当然不能满足我. 将其最终部署到 VPS 上, 通过 Memphis.Wang 这个域名来访问才是王道. 今天就来完善一下我的 Hexo 部署作业. 一番折腾下来并不容易, 简单记录分享一下. (均在 CentOS 7 下完成)">
@@ -394,7 +394,7 @@
 <h4 id="MyBlogPublish-生成成功-Nginx-更新失败"><a href="#MyBlogPublish-生成成功-Nginx-更新失败" class="headerlink" title="MyBlogPublish 生成成功, Nginx 更新失败"></a>MyBlogPublish 生成成功, Nginx 更新失败</h4><p>由于 Nginx 的运行要访问几个系统目录, 所以需要通过 sudo 来运行 Nginx, 但是由于整个部署过程是一个自动化流程, hook 使用脚本来完成工作, 没有机会让我们在本地机器上为 VPS 上的部署输入密码, 所以需要去除对 Nginx 命令 sudo 时的密码要求:</p>
 <p>登录服务器修改 <code>/etc/sudoers</code> 文件, 增加一行 <code>username ALL=NOPASSWD: /usr/sbin/nginx</code></p>
 <p>此外这套流程多处使用 ssh 登录 VPS, 为了避免频繁输入密码的麻烦, 建议使用 rsa key 方式登录, 具体办法 Google 一下, 不再详述 </p>
-<p>–</p>
+<hr>
 <p>至此, 我完成了对 hexo 部署流程的封装, 可以一体化控制, 只需要执行 hexo 的部署命令, 就能将博客更新到我的 GitPages 和 VPS 上. 之后我只需要专注与我的博客内容, 不需要关心这之后的一套部署细节. 甚至可能很长一段时间都不需要登录我的 VPS 了.</p>
 
       
