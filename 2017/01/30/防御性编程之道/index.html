@@ -1,0 +1,726 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="翻译,代码规范," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="一份好代码并不取仅仅决于脑子是否灵活, 工作是否努力. 还有经验和对待自己工作的态度, 重要的事情强调三遍, 态度, 态度, 态度. 码如其人, 从字里行间可是很能够考察人的品性的, 今天在湾区日报上看到了这篇文章, 忙中抽空, 在半夜完成了翻译, 分享出来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="防御性编程之道">
+<meta property="og:url" content="http://www.memphis.wang/2017/01/30/防御性编程之道/index.html">
+<meta property="og:site_name" content="Memphis' Talk">
+<meta property="og:description" content="一份好代码并不取仅仅决于脑子是否灵活, 工作是否努力. 还有经验和对待自己工作的态度, 重要的事情强调三遍, 态度, 态度, 态度. 码如其人, 从字里行间可是很能够考察人的品性的, 今天在湾区日报上看到了这篇文章, 忙中抽空, 在半夜完成了翻译, 分享出来">
+<meta property="og:image" content="https://res.cloudinary.com/practicaldev/image/fetch/s--Pic7qAkP--/c_limit,f_auto,fl_progressive,q_auto,w_725/https://medium2.global.ssl.fastly.net/max/2000/1%2AwJBEFQ8XcNR7RzlMnTF_fw.png">
+<meta property="og:updated_time" content="2017-01-30T13:21:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="防御性编程之道">
+<meta name="twitter:description" content="一份好代码并不取仅仅决于脑子是否灵活, 工作是否努力. 还有经验和对待自己工作的态度, 重要的事情强调三遍, 态度, 态度, 态度. 码如其人, 从字里行间可是很能够考察人的品性的, 今天在湾区日报上看到了这篇文章, 忙中抽空, 在半夜完成了翻译, 分享出来">
+<meta name="twitter:image" content="https://res.cloudinary.com/practicaldev/image/fetch/s--Pic7qAkP--/c_limit,f_auto,fl_progressive,q_auto,w_725/https://medium2.global.ssl.fastly.net/max/2000/1%2AwJBEFQ8XcNR7RzlMnTF_fw.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.memphis.wang/2017/01/30/防御性编程之道/"/>
+
+
+
+
+
+  <title> 防御性编程之道 | Memphis' Talk </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Memphis' Talk</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">words that cross the skills and the mind</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://www.memphis.wang/2017/01/30/防御性编程之道/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Memphis Wang">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.webp">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Memphis' Talk">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Memphis' Talk" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                防御性编程之道
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-30T21:15:00+08:00">
+                2017-01-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/翻译/" itemprop="url" rel="index">
+                    <span itemprop="name">翻译</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/翻译/技术译文/" itemprop="url" rel="index">
+                    <span itemprop="name">技术译文</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>一份好代码并不取仅仅决于脑子是否灵活, 工作是否努力. 还有经验和对待自己工作的态度, 重要的事情强调三遍, 态度, 态度, 态度. 码如其人, 从字里行间可是很能够考察人的品性的, 今天在湾区日报上看到了这篇文章, 忙中抽空, 在半夜完成了翻译, 分享出来</p>
+<a id="more"></a>
+<p>原文地址: <a href="https://dev.to/0x13a/the-art-of-defensive-programming?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website" target="_blank" rel="external">The Art of Defensive Programming</a> (科学上网)</p>
+<p>为什么有些程序员写不出安全的代码? 我们在这里不是要再一次讨论代码的 “整洁之道”, 而是从实战角度出发, 更进一步地讨论代码的安全性和健壮性. 因为不安全的软件可以说是相当地废柴. 我们先看看什么是我所说的不安全的软件.</p>
+<ul>
+<li><p>由于箭载导航的软件 Bug, 欧洲空间局价值<strong>十亿美刀</strong>的<strong>阿丽亚娜5型火箭</strong> 在 501 号任务起飞 40 秒后发生了解体 (June 4, 1996). </p>
+</li>
+<li><p>20 世纪 80 年代, <strong>Therac-25 放射性治疗仪</strong> 控制代码中的一个 bug  释放出了超量的 X-射线, 直接导致了至少 5 名患者的死亡. </p>
+</li>
+<li><p><strong>MIM-104 爱国者导弹</strong> 的一个软件错误, 使得系统时钟在工作了 100 个小时之后, 产生了 1/3 秒的时间误差, 导致无法成功定位并拦截飞弹. 伊拉克的导弹打击了美军在沙特阿拉伯达兰的一处军营, 造成了 28 名美军士兵丧生. (February 25, 1991).</p>
+</li>
+</ul>
+<p>这些教训应该足够让我们明白写出安全的代码有多么重要, 尤其是在一些特定的领域. 同时也让我们意识到我们的代码将会带给我们怎么样的惨剧.</p>
+<h2 id="防御性编程初窥"><a href="#防御性编程初窥" class="headerlink" title="防御性编程初窥"></a>防御性编程初窥</h2><p>为什么我觉得防御性编程是一个解决这些问题的好办法?</p>
+<blockquote>
+<p>抵御不可能的情况, 因为不可能的情况总是会发生</p>
+</blockquote>
+<p>关于防御性编程有很多定义, 相对于关注的不同安全级别和软件项目中用到的资源而有所不同.</p>
+<p><strong>防御性编程</strong> 是 <a href="https://en.wikipedia.org/wiki/Defensive_design" target="_blank" rel="external">防御性设计</a> 的一种表现形式, 旨在确保 <a href="https://en.wikipedia.org/wiki/Software" target="_blank" rel="external">软件</a> 在未预见到的环境下的持续工作能力. 防御性编程常常被用来在对可用性, 安全性, 健壮性有高要求的环境中使用 – <a href="https://en.wikipedia.org/wiki/Defensive_programming" target="_blank" rel="external">维基百科</a></p>
+<p>我个人认为这种编程方式在处理规模大, 周期长, 参与人数众多的项目时可以适用. 比如一个需要大范围广泛维护的开源项目.</p>
+<p>不妨一起过一遍我总结的几个关键点, 来向防御性编程之道出发.</p>
+<h3 id="永远不要信任用户的输入"><a href="#永远不要信任用户的输入" class="headerlink" title="永远不要信任用户的输入"></a>永远不要信任用户的输入</h3><p>总是假设你将接收到一些你没有预期到的东西, 这将使你走向防御性编程程序员的康庄大道上. 对抗你的用户输入内容, 或其他广义上输入进你的系统中的信息. 因为我们已经说过了, 我们需要预料到出乎意料的东西. 尝试变得严苛一些, 根据你的预期对你的输入信息做 <a href="https://en.wikipedia.org/wiki/Assertion_(software_development" target="_blank" rel="external">断言检查</a>)</p>
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Pic7qAkP--/c_limit,f_auto,fl_progressive,q_auto,w_725/https://medium2.global.ssl.fastly.net/max/2000/1%2AwJBEFQ8XcNR7RzlMnTF_fw.png" alt="最好的防守就是进攻"></p>
+<p>使用白名单替代黑名单, 例如在检查图片文件后缀名时, 不要关注非法的类型, 而专注于合法类型, 然后把剩余的都干掉. 如果你用 PHP 的话, 你还有茫茫多的开源验证库来让你的工作更加轻松.</p>
+<p><em>最好的防守就是进攻</em> 请变得更严格一点</p>
+<h3 id="使用数据抽象"><a href="#使用数据抽象" class="headerlink" title="使用数据抽象"></a>使用数据抽象</h3><p><a href="https://www.veracode.com/directory/owasp-top-10" target="_blank" rel="external"><strong>OWASP 十大最容易受攻击的安全弱点</strong></a> 榜首就是注入攻击. 这意味着一些人(也许是茫茫多的人)并没有使用一些安全工具来对数据库发起请求. 请使用数据抽象模块或者数据抽象库. 在 PHP 中你可以使用 <a href="http://php.net/manual/en/book.pdo.php" target="_blank" rel="external">PDO</a> 来 <a href="http://stackoverflow.com/questions/134099/are-pdo-prepared-statements-sufficient-to-prevent-sql-injection" target="_blank" rel="external">实现基本的注入保护</a>.</p>
+<h3 id="不要重复造轮子"><a href="#不要重复造轮子" class="headerlink" title="不要重复造轮子"></a>不要重复造轮子</h3><p>你从不使用框架(哪怕是个微型框架)? 你喜欢毫无理由地自己做一些额外的工作? 好吧, 随你的便, 先提前祝贺一下你浪费的这么多时间. 我要说的并不只是事关那些框架, 还包括了一些新特性, 你可以轻松地 <a href="https://packagist.org/" target="_blank" rel="external">使用那些早就存在, 经过良好测试, 稳定并且被成千上万开发者信任的东西</a>, 而不是只是因为觉得比较屌就自己去手工建造. 自己造轮子的唯一理由应该是因为你的需求无法被现有的轮子所满足(糟糕的性能, 或者缺失关键特性等等).</p>
+<p>这是人们所说的<strong>聪明的代码复用</strong>. 请尽情地拥抱它.</p>
+<h3 id="不要信任开发者"><a href="#不要信任开发者" class="headerlink" title="不要信任开发者"></a>不要信任开发者</h3><p>说到防御性编程有时会提及<a href="https://en.wikipedia.org/wiki/Defensive_driving" target="_blank" rel="external"><strong>防御性驾驶</strong></a>的这个概念, 在驾驶中, 我们假设我们周围的其他人都会潜在地犯错. 所以我们对于他人的行为也许要格外小心. 同样的概念应用到编程上就是我们作为开发者, 不能信任其他开发者的代码, 甚至连自己的代码都不能信. </p>
+<p>在大项目中, 牵涉到许多开发人员. 就会有许多不同的代码写法和组织方式. 常常让人觉得困惑, 甚至于导致 bug 的产生. 这是我们为什么要强制推行代码风格规范和 mess detector 的原因, 它能让我的生活更加简便.</p>
+<h3 id="写扎实的代码"><a href="#写扎实的代码" class="headerlink" title="写扎实的代码"></a>写<strong>扎实</strong>的代码</h3><p>这对(防御性编程的)程序员来说是一块硬骨头, <a href="https://dev.to/0x13a/how-to-write-solid-code-that-doesnt-suck" target="_blank" rel="external"><strong>写不操蛋的代码</strong></a>这件事, 许多人心里清楚且挂在嘴边, 却没有正真在意, 或没有投入足够的努力来使自己的代码更加扎实.</p>
+<p>举些反例</p>
+<blockquote>
+<h4 id="不要-使用未初始化的对象属性"><a href="#不要-使用未初始化的对象属性" class="headerlink" title="不要: 使用未初始化的对象属性"></a>不要: 使用未初始化的对象属性</h4></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"></div><div class="line">class BankAccount</div><div class="line">&#123;</div><div class="line">    protected $currency = null;</div><div class="line">    public function setCurrency($currency) &#123; ... &#125;</div><div class="line">    public function payTo(Account $to, $amount)</div><div class="line">    &#123;</div><div class="line">        // sorry for this silly example</div><div class="line">        $this-&gt;transaction-&gt;process($to, $amount, $this-&gt;currency);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// I forgot to call $bankAccount-&gt;setCurrency(&apos;GBP&apos;);</div><div class="line">$bankAccount-&gt;payTo($joe, 100);</div></pre></td></tr></table></figure>
+<p>在这个情况下, 我们不得不记得在使用 <em>payment</em> 前先调用 <em>setCurrency</em>. 这真是件糟糕的事情, 像这样引起状态改变的操作 (如付款), 不应该使用到两个公开方法, 分两个步骤来完成. 我们可以有很多不同的方式完成支付, 但是我们<strong>一定只能有一个简单公开的方法</strong>来完成状态的改变. (对象永远不准处于一种不一致的状态当中).</p>
+<p>对于这个例子, 我们可以做到更好: 封装未初始化的属性到 <em>Money</em> 对象中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"></div><div class="line">class BankAccount</div><div class="line">&#123;</div><div class="line">    public function payTo(Account $to, Money $money) &#123; ... &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$bankAccount-&gt;payTo($joe, new Money(100, new Currency(&apos;GBP&apos;)));</div></pre></td></tr></table></figure></p>
+<p>为保万无一失, <strong>不要使用未初始化的对象属性</strong></p>
+<blockquote>
+<h4 id="不要-在类空间之外泄漏状态"><a href="#不要-在类空间之外泄漏状态" class="headerlink" title="不要: 在类空间之外泄漏状态"></a>不要: 在类空间之外泄漏状态</h4></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"></div><div class="line">class Message</div><div class="line">&#123;</div><div class="line">    protected $content;</div><div class="line">    public function setContent($content)</div><div class="line">    &#123;</div><div class="line">        $this-&gt;content = $content;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Mailer</div><div class="line">&#123;</div><div class="line">    protected $message;</div><div class="line">    public function __construct(Message $message)</div><div class="line">    &#123;</div><div class="line">        $this-&gt;message = $message;</div><div class="line">    &#125;</div><div class="line">    public function sendMessage(</div><div class="line">    &#123;</div><div class="line">        var_dump($this-&gt;message);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$message = new Message();</div><div class="line">$message-&gt;setContent(&quot;bob message&quot;);</div><div class="line">$joeMailer = new Mailer($message);</div><div class="line"></div><div class="line">$message-&gt;setContent(&quot;joe message&quot;);</div><div class="line">$bobMailer = new Mailer($message);</div><div class="line"></div><div class="line">$joeMailer-&gt;sendMessage();</div><div class="line">$bobMailer-&gt;sendMessage();</div></pre></td></tr></table></figure>
+<p>这种情况下 <em>Message</em> 被引用传递, 导致的结果是两个邮件内的信息都是 <em>“joe message”</em>. 解决办法之一可以在邮差类的构造函数中克隆消息对象, 但是我们最应该总是遵守的方式应该是使用(<em>不可变的</em>) <a href="https://en.wikipedia.org/wiki/Value_object" target="_blank" rel="external">值对象</a>而不是 <em>Message</em> 这样的可变对象,  <strong>能用不可变对象就尽量用不可变对象</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"></div><div class="line">class Message</div><div class="line">&#123;</div><div class="line">    protected $content;</div><div class="line">    public function __construct($content)</div><div class="line">    &#123;</div><div class="line">        $this-&gt;content = $content;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Mailer </div><div class="line">&#123;</div><div class="line">    protected $message;</div><div class="line">    public function __construct(Message $message)</div><div class="line">    &#123;</div><div class="line">        $this-&gt;message = $message;</div><div class="line">    &#125;</div><div class="line">    public function sendMessage()</div><div class="line">    &#123;</div><div class="line">        var_dump($this-&gt;message);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$joeMailer = new Mailer(new Message(&quot;bob message&quot;));</div><div class="line">$bobMailer = new Mailer(new Message(&quot;joe message&quot;));</div><div class="line"></div><div class="line">$joeMailer-&gt;sendMessage();</div><div class="line">$bobMailer-&gt;sendMessage();</div></pre></td></tr></table></figure>
+<h1 id="写测试"><a href="#写测试" class="headerlink" title="写测试"></a>写测试</h1><p>这还用强调吗? 写单元测试能帮助你遵守一些通用的原则如 “高内聚, 低耦合”, “单一职责原则”, “良好的对象组成”. 不仅能帮助你测试小的工作单元, 也能测试你构建你的对象的方式. 事实上, 当你测试你的小功能时, 你会清楚地看到你需要多少测试用例, 模拟多少对象才能够 100% 地覆盖你的代码.</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>希望你能喜欢这篇文章, 记住这些只是建议, 具体在什么时候, 哪里, 是否要使用防御性编程, 还是要取决于你自己. </p>
+<p><strong>谢谢阅读, 祝你有个愉快的一天!</strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/翻译/" rel="tag"># 翻译</a>
+          
+            <a href="/tags/代码规范/" rel="tag"># 代码规范</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/30/我就叫它-叉叉-Manager-吧/" rel="next" title="我就叫它.. 叉叉 Manager 吧">
+                <i class="fa fa-chevron-left"></i> 我就叫它.. 叉叉 Manager 吧
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.webp"
+               alt="Memphis Wang" />
+          <p class="site-author-name" itemprop="name">Memphis Wang</p>
+          <p class="site-description motion-element" itemprop="description">Memphis 的技术小站还有他所认识的世界</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#防御性编程初窥"><span class="nav-number">1.</span> <span class="nav-text">防御性编程初窥</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#永远不要信任用户的输入"><span class="nav-number">1.1.</span> <span class="nav-text">永远不要信任用户的输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用数据抽象"><span class="nav-number">1.2.</span> <span class="nav-text">使用数据抽象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不要重复造轮子"><span class="nav-number">1.3.</span> <span class="nav-text">不要重复造轮子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不要信任开发者"><span class="nav-number">1.4.</span> <span class="nav-text">不要信任开发者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写扎实的代码"><span class="nav-number">1.5.</span> <span class="nav-text">写扎实的代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#不要-使用未初始化的对象属性"><span class="nav-number">1.5.1.</span> <span class="nav-text">不要: 使用未初始化的对象属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不要-在类空间之外泄漏状态"><span class="nav-number">1.5.2.</span> <span class="nav-text">不要: 在类空间之外泄漏状态</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写测试"><span class="nav-number"></span> <span class="nav-text">写测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number"></span> <span class="nav-text">总结</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Memphis Wang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid="></script>
+      <!-- UY END -->
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
