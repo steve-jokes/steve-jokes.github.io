@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="Memphis' Talk">
 <meta property="og:description" content="一份好代码并不取仅仅决于脑子是否灵活, 工作是否努力. 还有经验和对待自己工作的态度, 重要的事情强调三遍, 态度, 态度, 态度. 码如其人, 从字里行间可是很能够考察人的品性的, 今天在湾区日报上看到了这篇文章, 忙中抽空, 在半夜完成了翻译, 分享出来">
 <meta property="og:image" content="https://res.cloudinary.com/practicaldev/image/fetch/s--Pic7qAkP--/c_limit,f_auto,fl_progressive,q_auto,w_725/https://medium2.global.ssl.fastly.net/max/2000/1%2AwJBEFQ8XcNR7RzlMnTF_fw.png">
-<meta property="og:updated_time" content="2017-01-30T13:24:42.000Z">
+<meta property="og:updated_time" content="2017-01-30T13:26:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="防御性编程之道">
 <meta name="twitter:description" content="一份好代码并不取仅仅决于脑子是否灵活, 工作是否努力. 还有经验和对待自己工作的态度, 重要的事情强调三遍, 态度, 态度, 态度. 码如其人, 从字里行间可是很能够考察人的品性的, 今天在湾区日报上看到了这篇文章, 忙中抽空, 在半夜完成了翻译, 分享出来">
@@ -353,8 +353,7 @@
         <p>一份好代码并不取仅仅决于脑子是否灵活, 工作是否努力. 还有经验和对待自己工作的态度, 重要的事情强调三遍, 态度, 态度, 态度. 码如其人, 从字里行间可是很能够考察人的品性的, 今天在湾区日报上看到了这篇文章, 忙中抽空, 在半夜完成了翻译, 分享出来</p>
 <a id="more"></a>
 <p>原文地址: <a href="https://dev.to/0x13a/the-art-of-defensive-programming?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website" target="_blank" rel="external">The Art of Defensive Programming</a> (科学上网)</p>
-<p># </p>
-<p>为什么有些程序员写不出安全的代码? 我们在这里不是要再一次讨论代码的 “整洁之道”, 而是从实战角度出发, 更进一步地讨论代码的安全性和健壮性. 因为不安全的软件可以说是相当地废柴. 我们先看看什么是我所说的不安全的软件.</p>
+<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>为什么有些程序员写不出安全的代码? 我们在这里不是要再一次讨论代码的 “整洁之道”, 而是从实战角度出发, 更进一步地讨论代码的安全性和健壮性. 因为不安全的软件可以说是相当地废柴. 我们先看看什么是我所说的不安全的软件.</p>
 <ul>
 <li><p>由于箭载导航的软件 Bug, 欧洲空间局价值<strong>十亿美刀</strong>的<strong>阿丽亚娜5型火箭</strong> 在 501 号任务起飞 40 秒后发生了解体 (June 4, 1996). </p>
 </li>
@@ -562,7 +561,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#防御性编程初窥"><span class="nav-number">1.</span> <span class="nav-text">防御性编程初窥</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#永远不要信任用户的输入"><span class="nav-number">1.1.</span> <span class="nav-text">永远不要信任用户的输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用数据抽象"><span class="nav-number">1.2.</span> <span class="nav-text">使用数据抽象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不要重复造轮子"><span class="nav-number">1.3.</span> <span class="nav-text">不要重复造轮子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不要信任开发者"><span class="nav-number">1.4.</span> <span class="nav-text">不要信任开发者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写扎实的代码"><span class="nav-number">1.5.</span> <span class="nav-text">写扎实的代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#不要-使用未初始化的对象属性"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">不要: 使用未初始化的对象属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不要-在类空间之外泄漏状态"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">不要: 在类空间之外泄漏状态</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写测试"><span class="nav-number">2.</span> <span class="nav-text">写测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#防御性编程初窥"><span class="nav-number">2.</span> <span class="nav-text">防御性编程初窥</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#永远不要信任用户的输入"><span class="nav-number">2.1.</span> <span class="nav-text">永远不要信任用户的输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用数据抽象"><span class="nav-number">2.2.</span> <span class="nav-text">使用数据抽象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不要重复造轮子"><span class="nav-number">2.3.</span> <span class="nav-text">不要重复造轮子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不要信任开发者"><span class="nav-number">2.4.</span> <span class="nav-text">不要信任开发者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写扎实的代码"><span class="nav-number">2.5.</span> <span class="nav-text">写扎实的代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#不要-使用未初始化的对象属性"><span class="nav-number">2.5.0.1.</span> <span class="nav-text">不要: 使用未初始化的对象属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不要-在类空间之外泄漏状态"><span class="nav-number">2.5.0.2.</span> <span class="nav-text">不要: 在类空间之外泄漏状态</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写测试"><span class="nav-number">3.</span> <span class="nav-text">写测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
