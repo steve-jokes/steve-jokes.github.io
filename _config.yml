@@ -13,6 +13,7 @@ timezone: Asia/Shanghai
 avatar: /images/avatar.webp
 
 duoshuo_shortname: memphisw
+duoshuo_share: true
 baidu_analytics: aca4acbcea6156f67675c1464ba1c800
 
 # URL
