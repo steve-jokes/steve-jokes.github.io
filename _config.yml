@@ -11,7 +11,9 @@ author: Memphis.W
 language: zh-Hans
 timezone: Asia/Shanghai
 avatar: /images/avatar.webp
+
 duoshuo_shortname: memphisw
+baidu_analytics: aca4acbcea6156f67675c1464ba1c800
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
