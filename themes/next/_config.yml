@@ -192,8 +192,8 @@ sidebar:
 
 # Blogrolls
 links_title: Links
-links_layout: block
-links_layout: inline
+#links_layout: block
+#links_layout: inline
 links:
   Ryeeeeee: http://ryeeeeee.com/
   Chris Ye: http://strawdog.top/
