@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Memphis&#39; Talk</title>
+  <subtitle>and the world he knows</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.memphis.wang/"/>
+  <updated>2017-01-30T13:34:52.000Z</updated>
+  <id>http://www.memphis.wang/</id>
+  
+  <author>
+    <name>Memphis.W</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>当我们谈论组团时, 没提到的:让一些人离开</title>
+    <link href="http://www.memphis.wang/2017/01/30/%E5%BD%93%E6%88%91%E4%BB%AC%E8%B0%88%E8%AE%BA%E7%BB%84%E5%9B%A2%E6%97%B6-%E6%B2%A1%E6%8F%90%E5%88%B0%E7%9A%84-%E8%AE%A9%E4%B8%80%E4%BA%9B%E4%BA%BA%E7%A6%BB%E5%BC%80/"/>
+    <id>http://www.memphis.wang/2017/01/30/当我们谈论组团时-没提到的-让一些人离开/</id>
+    <published>2017-01-30T13:28:21.000Z</published>
+    <updated>2017-01-30T13:34:52.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;过去的这一年我做为联合创始人参与了一家公司的创造, 走过了 12 个月的起起伏伏, 两个月前我们发生过一次裁员. 在那之后我的心态经历过各种阶段的变化, 看到湾区日报推荐的这篇博文, 觉得三观很正, 分享一下&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="翻译" scheme="http://www.memphis.wang/categories/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="管理" scheme="http://www.memphis.wang/categories/%E7%BF%BB%E8%AF%91/%E7%AE%A1%E7%90%86/"/>
+    
+    
+      <category term="翻译" scheme="http://www.memphis.wang/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="团队" scheme="http://www.memphis.wang/tags/%E5%9B%A2%E9%98%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>防御性编程之道</title>
+    <link href="http://www.memphis.wang/2017/01/30/%E9%98%B2%E5%BE%A1%E6%80%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%81%93/"/>
+    <id>http://www.memphis.wang/2017/01/30/防御性编程之道/</id>
+    <published>2017-01-30T13:15:00.000Z</published>
+    <updated>2017-01-30T13:27:13.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一份好代码并不取仅仅决于脑子是否灵活, 工作是否努力. 还有经验和对待自己工作的态度, 重要的事情强调三遍, 态度, 态度, 态度. 码如其人, 从字里行间可是很能够考察人的品性的, 今天在湾区日报上看到了这篇文章, 忙中抽空, 在半夜完成了翻译, 分享出来&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="翻译" scheme="http://www.memphis.wang/categories/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="技术译文" scheme="http://www.memphis.wang/categories/%E7%BF%BB%E8%AF%91/%E6%8A%80%E6%9C%AF%E8%AF%91%E6%96%87/"/>
+    
+    
+      <category term="翻译" scheme="http://www.memphis.wang/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="代码规范" scheme="http://www.memphis.wang/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我就叫它.. 叉叉 Manager 吧</title>
+    <link href="http://www.memphis.wang/2017/01/30/%E6%88%91%E5%B0%B1%E5%8F%AB%E5%AE%83-%E5%8F%89%E5%8F%89-Manager-%E5%90%A7/"/>
+    <id>http://www.memphis.wang/2017/01/30/我就叫它-叉叉-Manager-吧/</id>
+    <published>2017-01-30T12:47:48.000Z</published>
+    <updated>2017-01-30T13:13:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关于编程实践中的命名规范, 大学舍友在舍群里分享了一篇文章 &lt;a href=&quot;https://blog.codinghorror.com/i-shall-call-it-somethingmanager/&quot;&gt;I Shall Call It.. SomethingManager&lt;/a&gt;, 觉得蛮有意思而且感同身受, 简单翻译一下分享给大家.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="翻译" scheme="http://www.memphis.wang/categories/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="技术译文" scheme="http://www.memphis.wang/categories/%E7%BF%BB%E8%AF%91/%E6%8A%80%E6%9C%AF%E8%AF%91%E6%96%87/"/>
+    
+    
+      <category term="翻译" scheme="http://www.memphis.wang/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="代码规范" scheme="http://www.memphis.wang/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
+    
+      <category term="命名" scheme="http://www.memphis.wang/tags/%E5%91%BD%E5%90%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 博客的自动化部署</title>
+    <link href="http://www.memphis.wang/2017/01/30/Hexo-%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
+    <id>http://www.memphis.wang/2017/01/30/Hexo-博客的自动化部署/</id>
+    <published>2017-01-29T19:29:05.000Z</published>
+    <updated>2017-01-29T19:32:25.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;既然拥有了自己的 VPS, 单纯的部署到 GitPages 上这种 easy 的方式当然不能满足我. 将其最终部署到 VPS 上, 通过 &lt;a href=&quot;http://memphis.wang/&quot;&gt;Memphis.Wang&lt;/a&gt; 这个域名来访问才是王道. 今天就来完善一下我的 Hexo 部署作业. 一番折腾下来并不容易, 简单记录分享一下. (均在 CentOS 7 下完成)&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="博客" scheme="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="网站历史" scheme="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/%E7%BD%91%E7%AB%99%E5%8E%86%E5%8F%B2/"/>
+    
+    
+      <category term="hexo" scheme="http://www.memphis.wang/tags/hexo/"/>
+    
+      <category term="博客" scheme="http://www.memphis.wang/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="nginx" scheme="http://www.memphis.wang/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>起源:Hexo</title>
+    <link href="http://www.memphis.wang/2017/01/29/%E8%B5%B7%E6%BA%90-Hexo/"/>
+    <id>http://www.memphis.wang/2017/01/29/起源-Hexo/</id>
+    <published>2017-01-28T16:24:55.000Z</published>
+    <updated>2017-01-29T17:32:13.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt; 是一个基于 Node.Js 实现的快速、简洁且高效的博客框架. 框架搭建便捷, 能够高效生成静态博客, 通过简易的配置就可以实现博客的部署与更新, 配合 Markdown 语法的文本, 让你更加专注于内容本身. &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="博客" scheme="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="网站历史" scheme="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/%E7%BD%91%E7%AB%99%E5%8E%86%E5%8F%B2/"/>
+    
+    
+      <category term="hexo" scheme="http://www.memphis.wang/tags/hexo/"/>
+    
+      <category term="博客" scheme="http://www.memphis.wang/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="markdown" scheme="http://www.memphis.wang/tags/markdown/"/>
+    
+  </entry>
+  
+</feed>
