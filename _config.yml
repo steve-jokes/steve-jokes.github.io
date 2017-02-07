@@ -16,6 +16,14 @@ duoshuo_shortname: memphisw
 duoshuo_share: true
 baidu_analytics: aca4acbcea6156f67675c1464ba1c800
 
+#RSS
+feed: 
+  type: rss2
+  path: rss2.xml 
+  limit: 20 
+  hub: 
+  content:
+
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://www.memphis.wang
