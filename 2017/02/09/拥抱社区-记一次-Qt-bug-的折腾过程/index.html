@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo,博客,nginx," />
+  <meta name="keywords" content="qt,debug,社区," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="既然拥有了自己的 VPS, 单纯的部署到 GitPages 上这种 easy 的方式当然不能满足我. 将其最终部署到 VPS 上, 通过 Memphis.Wang 这个域名来访问才是王道. 今天就来完善一下我的 Hexo 部署作业. 一番折腾下来并不容易, 简单记录分享一下. (均在 CentOS 7 下完成)">
+<meta name="description" content="年初 Qt 发布了最新版本 5.8 的 Release 版本, 两天前我对自己的项目进行了版本升级, 遇到了莫名其妙的崩溃问题. 经过两天的瞎折腾之后, 仍然没有办法独立解决问题. 于是我向 Qt 社区发起了求助, 在 20 次浏览量, 15 个回复之后, 找到了问题的答案, 从此对 Qt 社区另眼相看. 趁热记录一下:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 博客的自动化部署">
-<meta property="og:url" content="http://www.memphis.wang/2017/01/30/Hexo-博客的自动化部署/index.html">
+<meta property="og:title" content="拥抱社区, 记一次 Qt bug 的折腾过程">
+<meta property="og:url" content="http://www.memphis.wang/2017/02/09/拥抱社区-记一次-Qt-bug-的折腾过程/index.html">
 <meta property="og:site_name" content="Memphis' Talk">
-<meta property="og:description" content="既然拥有了自己的 VPS, 单纯的部署到 GitPages 上这种 easy 的方式当然不能满足我. 将其最终部署到 VPS 上, 通过 Memphis.Wang 这个域名来访问才是王道. 今天就来完善一下我的 Hexo 部署作业. 一番折腾下来并不容易, 简单记录分享一下. (均在 CentOS 7 下完成)">
-<meta property="og:updated_time" content="2017-01-29T19:32:25.000Z">
+<meta property="og:description" content="年初 Qt 发布了最新版本 5.8 的 Release 版本, 两天前我对自己的项目进行了版本升级, 遇到了莫名其妙的崩溃问题. 经过两天的瞎折腾之后, 仍然没有办法独立解决问题. 于是我向 Qt 社区发起了求助, 在 20 次浏览量, 15 个回复之后, 找到了问题的答案, 从此对 Qt 社区另眼相看. 趁热记录一下:">
+<meta property="og:updated_time" content="2017-02-08T17:25:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo 博客的自动化部署">
-<meta name="twitter:description" content="既然拥有了自己的 VPS, 单纯的部署到 GitPages 上这种 easy 的方式当然不能满足我. 将其最终部署到 VPS 上, 通过 Memphis.Wang 这个域名来访问才是王道. 今天就来完善一下我的 Hexo 部署作业. 一番折腾下来并不容易, 简单记录分享一下. (均在 CentOS 7 下完成)">
+<meta name="twitter:title" content="拥抱社区, 记一次 Qt bug 的折腾过程">
+<meta name="twitter:description" content="年初 Qt 发布了最新版本 5.8 的 Release 版本, 两天前我对自己的项目进行了版本升级, 遇到了莫名其妙的崩溃问题. 经过两天的瞎折腾之后, 仍然没有办法独立解决问题. 于是我向 Qt 社区发起了求助, 在 20 次浏览量, 15 个回复之后, 找到了问题的答案, 从此对 Qt 社区另眼相看. 趁热记录一下:">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://www.memphis.wang/2017/01/30/Hexo-博客的自动化部署/"/>
+  <link rel="canonical" href="http://www.memphis.wang/2017/02/09/拥抱社区-记一次-Qt-bug-的折腾过程/"/>
 
 
 
 
 
-  <title> Hexo 博客的自动化部署 | Memphis' Talk </title>
+  <title> 拥抱社区, 记一次 Qt bug 的折腾过程 | Memphis' Talk </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -272,7 +272,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://www.memphis.wang/2017/01/30/Hexo-博客的自动化部署/">
+  <link itemprop="mainEntityOfPage" href="http://www.memphis.wang/2017/02/09/拥抱社区-记一次-Qt-bug-的折腾过程/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Memphis.W">
@@ -296,7 +296,7 @@
             
             
               
-                Hexo 博客的自动化部署
+                拥抱社区, 记一次 Qt bug 的折腾过程
               
             
           </h1>
@@ -311,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-30T03:29:05+08:00">
-                2017-01-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-09T00:24:54+08:00">
+                2017-02-09
               </time>
             
 
@@ -345,8 +345,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/博客/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
+                  <a href="/categories/技术/Qt/" itemprop="url" rel="index">
+                    <span itemprop="name">Qt</span>
                   </a>
                 </span>
 
@@ -356,8 +356,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/博客/网站历史/" itemprop="url" rel="index">
-                    <span itemprop="name">网站历史</span>
+                  <a href="/categories/技术/Qt/Debug/" itemprop="url" rel="index">
+                    <span itemprop="name">Debug</span>
                   </a>
                 </span>
 
@@ -374,8 +374,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/30/Hexo-博客的自动化部署/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/30/Hexo-博客的自动化部署/" itemprop="commentCount"></span>
+                <a href="/2017/02/09/拥抱社区-记一次-Qt-bug-的折腾过程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/09/拥抱社区-记一次-Qt-bug-的折腾过程/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -385,7 +385,7 @@
 
           
           
-             <span id="/2017/01/30/Hexo-博客的自动化部署/" class="leancloud_visitors" data-flag-title="Hexo 博客的自动化部署">
+             <span id="/2017/02/09/拥抱社区-记一次-Qt-bug-的折腾过程/" class="leancloud_visitors" data-flag-title="拥抱社区, 记一次 Qt bug 的折腾过程">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -412,43 +412,26 @@
       
 
       
-        <p>既然拥有了自己的 VPS, 单纯的部署到 GitPages 上这种 easy 的方式当然不能满足我. 将其最终部署到 VPS 上, 通过 <a href="http://memphis.wang/" target="_blank" rel="external">Memphis.Wang</a> 这个域名来访问才是王道. 今天就来完善一下我的 Hexo 部署作业. 一番折腾下来并不容易, 简单记录分享一下. (均在 CentOS 7 下完成)</p>
+        <p>年初 Qt 发布了最新版本 5.8 的 Release 版本, 两天前我对自己的项目进行了版本升级, 遇到了莫名其妙的崩溃问题. 经过两天的瞎折腾之后, 仍然没有办法独立解决问题. 于是我向 Qt 社区发起了求助, 在 20 次浏览量, 15 个回复之后, 找到了问题的答案, 从此对 Qt 社区另眼相看. 趁热记录一下:</p>
 <a id="more"></a>
-<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><p>既然要通过访问我的 VPS 来打开博客, 自然需要一个靠谱的服务器啦. 出于习惯和周围同事的技术栈, 我选用 <a href="https://www.nginx.com/" target="_blank" rel="external">Nginx</a> 作为自己的一号方案, 安装部署起来都比较方便. 毕竟后端不是我的专业, 所以我直接通过 yum 包管理来安装一个落后的稳定版本. 通过 <code>nginx</code> 命令启动之后, 网页访问自己域名会有 Nginx 的默认页面出现, 安装成功.</p>
-<h2 id="VPS-上的-Git-仓库准备"><a href="#VPS-上的-Git-仓库准备" class="headerlink" title="VPS 上的 Git 仓库准备"></a>VPS 上的 Git 仓库准备</h2><p>完成 Git 形式的博客部署, 需要在 VPS 上准备两个仓库:</p>
+<h1 id="故事的开始"><a href="#故事的开始" class="headerlink" title="故事的开始"></a>故事的开始</h1><p><strong>once upon a time …</strong>, 咳咳, 没有那么久, 就在几天前, 我更新了 Qt 5.8. 新版本的 Qt Creator 在打开速度和稳定性上都有了明显的提示. 于是开开心心地享用了一个早上. 然而你永远不知道明天和意外哪一个先来临, 当我将程序对接的服务器从本机切换到沙箱, 准备给同事更新一个新版本的时候, 它居然崩溃了… 于是开始了我对于这个问题的 Debug 之旅.</p>
+<h1 id="探索与发现"><a href="#探索与发现" class="headerlink" title="探索与发现"></a>探索与发现</h1><p>说时迟那时快, 我二话不说点击了 start Debuging 按钮. 程序顺利启动, 输入账号密码, 点击登录… 我了个擦嘞又崩溃了. 看来问题和这个登录请求有关.<br>这个时候我最正确的选择应该是打上断点, 开始单步调试找到程序崩溃的地方, 再仔细分析原因. 但是出于好奇和不理智, 我没有选择这个办法. 开始尝试通过现象来判断这个问题的原因.<br>于是我又切换回了本机服务器, 启动, 登录, 成功了. 看来问题出在选用的服务器上? 那么这 tmd 就很诡异了. 于是我开始分析两个服务器的不同之处:</p>
 <ul>
-<li>一个 Git Bare 仓库, 没有工作区, 用于接受 Hexo 的部署推送, 触发 Bare 仓库的 hook 脚本, 更新服务器内容.</li>
-<li>一个标准 Git 仓库, 在 hook 脚本的控制下, 从 Bare 仓库中导出, 带工作区, 存放我们最终用于部署的博客内容.</li>
+<li>通过 curl 直接在命令行中对本机和沙箱服务器的登录接口进行访问, 都能够正常工作, 返回值也没有任何问题</li>
+<li>分析从本机和沙箱获得内容的编码, 也没有不同之处<br>时间就这样在反复的对比和尝试中流逝, 越着急越没有思路. 我的程序练最基本的登录功能都无法完成? 这 tmd 就很尴尬了呀.</li>
 </ul>
-<p>简单地说, 需要在 VPS 上选择一个目录:</p>
-<ol>
-<li><code>git init --bare MyBlog</code> (<em>命名随意</em>)</li>
-<li><code>git init MyBlogPublish</code> (<em>同上</em>)</li>
-</ol>
-<h2 id="配置-Nginx-服务器"><a href="#配置-Nginx-服务器" class="headerlink" title="配置 Nginx 服务器"></a>配置 Nginx 服务器</h2><p><code>vim /etc/nginx/nginx.conf</code>, 指定 root 参数到 /path/2/MyBlogPublish, 我们的服务器将以这个仓库作为根目录.</p>
-<h2 id="Hexo-配置部署选项"><a href="#Hexo-配置部署选项" class="headerlink" title="Hexo 配置部署选项"></a>Hexo 配置部署选项</h2><p>完成服务器 Git 仓库准备之后, 就可以在 <strong>本地机器</strong> 的 Hexo 项目中配置对于这台服务器的 Git 形式部署了, 编辑 Hexo 项目的 _config.yml 文件, 增加 deploy 选项:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- type: git</div><div class="line">  repo: ssh://username@your_vps_ip_address/path/2/MyBlog</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
-<p>如此一来, 当我通过 <code>hexo deploy</code> 执行部署命令时, 我的静态博客文件都会被推送到我指定的 VPS 机器的 Bare 仓库 MyBlog 上, 注意这里要选用 Bare 仓库, 否则推送会失败. </p>
-<h2 id="通过-Bare-仓库的-hook-脚本完成博客的部署"><a href="#通过-Bare-仓库的-hook-脚本完成博客的部署" class="headerlink" title="通过 Bare 仓库的 hook 脚本完成博客的部署"></a>通过 Bare 仓库的 hook 脚本完成博客的部署</h2><p>博客推送到 Bare 仓库后, 会触发一个 post-receive 事件, 我们可以在这个脚本中注册我们的部署指令:</p>
-<p><code>vim MyBlog/hooks/post-receive</code></p>
-<p>增加以下内容:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">git --work-tree=/path/2/MyBlogPublish --git-dir=/path/2/MyBlog checkout -f</div><div class="line">sudo nginx -s reload</div></pre></td></tr></table></figure>
-<p>执行 <code>chmod +x post-receive</code> 为这个 hook 增加执行权限.</p>
-<hr>
-<p>这么一来, 当我在本机执行 <code>hexo deploy</code> 后会发生这么几件事: </p>
-<ol>
-<li>hexo 将静态博客以 git push 形式退送给我的 MyBlog Bare 仓库</li>
-<li>触发 Bare 仓库的 post-receive 事件, 执行 hook 脚本</li>
-<li>脚本从 MyBlog 中导出了一个 MyBlogPublish 仓库, 其工作区中包含了静态博客的内容</li>
-<li>Nginx 发生了重新载入, 将 MyBlogPublish 仓库下的内容更新到了服务器上.</li>
-</ol>
-<p>一切看起来这么完美, 但这件美好的事情可能并没有在你身上发生, 因为有如下几个坑需要填平:</p>
-<h2 id="坑s"><a href="#坑s" class="headerlink" title="坑s"></a>坑s</h2><h4 id="修改-Nginx-root-目录以后-Nginx-出现了-403-错误"><a href="#修改-Nginx-root-目录以后-Nginx-出现了-403-错误" class="headerlink" title="修改 Nginx root 目录以后, Nginx 出现了 403 错误"></a>修改 Nginx root 目录以后, Nginx 出现了 403 错误</h4><p>这是因为 MyBlog 目录的所属用户导致, 由于我不是后端, 对安全性需求几乎为 0, 所以粗暴的方法是修改 Nginx 服务器配置 <code>/etc/nginx/nginx.conf</code>, 将 user 设为 root.</p>
-<h4 id="MyBlogPublish-生成成功-Nginx-更新失败"><a href="#MyBlogPublish-生成成功-Nginx-更新失败" class="headerlink" title="MyBlogPublish 生成成功, Nginx 更新失败"></a>MyBlogPublish 生成成功, Nginx 更新失败</h4><p>由于 Nginx 的运行要访问几个系统目录, 所以需要通过 sudo 来运行 Nginx, 但是由于整个部署过程是一个自动化流程, hook 使用脚本来完成工作, 没有机会让我们在本地机器上为 VPS 上的部署输入密码, 所以需要去除对 Nginx 命令 sudo 时的密码要求:</p>
-<p>登录服务器修改 <code>/etc/sudoers</code> 文件, 增加一行 <code>username ALL=NOPASSWD: /usr/sbin/nginx</code></p>
-<p>此外这套流程多处使用 ssh 登录 VPS, 为了避免频繁输入密码的麻烦, 建议使用 rsa key 方式登录, 具体办法 Google 一下, 不再详述 </p>
-<hr>
-<p>至此, 我完成了对 hexo 部署流程的封装, 可以一体化控制, 只需要执行 hexo 的部署命令, 就能将博客更新到我的 GitPages 和 VPS 上. 之后我只需要专注与我的博客内容, 不需要关心这之后的一套部署细节. 甚至可能很长一段时间都不需要登录我的 VPS 了.</p>
+<h1 id="神来的巧合"><a href="#神来的巧合" class="headerlink" title="神来的巧合"></a>神来的巧合</h1><p>就在我焦头烂额查阅相关资料文档, 对比服务器差异时. 晴天一声炸雷!(并没有), 网络断了… 我的工作也随之被打断. 因为我连不上我的沙箱服务器.<br>这一巧合触动了我, 是不是因为网络连接底层相关的代码, 导致了结果的不同? 带着这个疑问, 我开始了一个重要的尝试:<br>我将我本机服务器的 IP 地址 <code>127.0.0.1</code> 改成了 <code>192.168.1.103</code>, 看起来一个傻傻的异想天开的改动, 居然让我的程序再次崩溃了.<br>于是我开始思考这其中的奥秘, 前者是一个指代本机的 loopback 地址, 后者是我的网卡在局域网内的局域网地址. 粗略地看来, 从我本机上访问这两个地址的效果应该是约等于的, 但是其实有重要的差异. 对局域网内地址发起的请求要经过局域网网关, 能够被局域网的嗅探器嗅探到请求, 而对 loopback 地址是在网卡内部完成的, 外界对这些请求并不知情.<br>事已至此, 我终于能够小心翼翼地猜想. 这恐怕是 Qt 5.8 的一个官方 Bug!?</p>
+<h1 id="正轨"><a href="#正轨" class="headerlink" title="正轨"></a>正轨</h1><p>带着这个猜想, 我终于做了我最该做的事: step over 崩溃前后的代码. 望着程序一步一步走向 Qt 内部, 越来越确信这可能不是我的问题. 最终执行流程来到了汇编层.<br>我了个擦? 走到汇编了? 好办, Qt 不是开源的吗? 安装源码! 于是我开始陷入了另一个低效的大坑:</p>
+<h1 id="徒劳"><a href="#徒劳" class="headerlink" title="徒劳"></a>徒劳</h1><p>根据 <a href="http://blog.csdn.net/liang19890820/" target="_blank" rel="external">一去丶二三里</a> 的 <a href="http://blog.csdn.net/liang19890820/article/details/54346241" target="_blank" rel="external">查看和调试Qt源码</a> 一文, 我开始配置我的 Creator, 然而博主使用的是 windows 版本进行介绍, 版本也和我的对不上号. 我甚至找不到在 IDE 中配置源码的选项. 这次尝试宣告失败.<br>又有传言说通过静态编译 Qt 源码, 能够达到调试到 Qt 内部的效果, 于是我开始了对 Qt 源码漫长的编译. 大概花了… 8 个小时… 可是由于个人的愚钝, 我还是失败了. 基本上这时候我开始陷入了怀疑人生的环节.</p>
+<h1 id="柳岸花明"><a href="#柳岸花明" class="headerlink" title="柳岸花明"></a>柳岸花明</h1><p>直到这个故事的下半部分, 我才做了最应该做的事情: <strong>向开源社区寻求帮助</strong>. 花了十多分钟, 我对这个 bug 做了一个最小规模重现. 贴到了 Qt 官方论坛上: <a href="https://forum.qt.io/topic/75951/weird-crash-of-qnetworkaccessmanager-post" target="_blank" rel="external">Weird crash of QNetworkAccessManager::post()</a>(由于众所周知的原因, 可能需要梯子), 短短的 20 次浏览量, 15 个回帖 (其中有一半还是我的), 这个问题就被确认了. 两天的蒙头苦干, 比不上一次简单愉快的谈话.</p>
+<h1 id="回忆"><a href="#回忆" class="headerlink" title="回忆"></a>回忆</h1><p>这个故事告诉我们, <strong>在电影院请不要大声喧哗!</strong>. 额当然不是这个, 虽然也很重要. 总结几点吧:</p>
+<ul>
+<li>查问题需要使用科学的步骤, 切忌用经验来回答</li>
+<li>站在深坑面前, 要正确地估量使用方法的代价. 比如时间开销, 还有对自己情绪的呵(nue)护(dai).</li>
+<li>站在真理面前要敢于质疑</li>
+<li>开源社区赛高!! 拥抱社区!!</li>
+</ul>
+<p>啰嗦一句, 国外开源社区的小伙伴们真的超级热心肠, 不但积极帮忙讨论解决问题. 还对代码中可以改进的地方做出建议, 也会逗趣地对一些东西发出吐槽, 非常 nice. 好啦今天就唠叨到这里, 该去睡觉了, 拜个晚年祝路过的网友们鸡年大吉吧~</p>
 
       
     </div>
@@ -472,11 +455,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/qt/" rel="tag"># qt</a>
           
-            <a href="/tags/博客/" rel="tag"># 博客</a>
+            <a href="/tags/debug/" rel="tag"># debug</a>
           
-            <a href="/tags/nginx/" rel="tag"># nginx</a>
+            <a href="/tags/社区/" rel="tag"># 社区</a>
           
         </div>
       
@@ -485,8 +468,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/29/起源-Hexo/" rel="next" title="起源:Hexo">
-                <i class="fa fa-chevron-left"></i> 起源:Hexo
+              <a href="/2017/01/30/当我们谈论组团时-没提到的-让一些人离开/" rel="next" title="当我们谈论组团时, 没提到的:让一些人离开">
+                <i class="fa fa-chevron-left"></i> 当我们谈论组团时, 没提到的:让一些人离开
               </a>
             
           </div>
@@ -494,10 +477,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/30/我就叫它-叉叉-Manager-吧/" rel="prev" title="我就叫它.. 叉叉 Manager 吧">
-                我就叫它.. 叉叉 Manager 吧 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -512,10 +491,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/01/30/Hexo-博客的自动化部署/"
-     data-title="Hexo 博客的自动化部署"
+        <div class="ds-share flat" data-thread-key="2017/02/09/拥抱社区-记一次-Qt-bug-的折腾过程/"
+     data-title="拥抱社区, 记一次 Qt bug 的折腾过程"
      data-content=""
-     data-url="http://www.memphis.wang/2017/01/30/Hexo-博客的自动化部署/">
+     data-url="http://www.memphis.wang/2017/02/09/拥抱社区-记一次-Qt-bug-的折腾过程/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -542,8 +521,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/01/30/Hexo-博客的自动化部署/"
-           data-title="Hexo 博客的自动化部署" data-url="http://www.memphis.wang/2017/01/30/Hexo-博客的自动化部署/">
+      <div class="ds-thread" data-thread-key="2017/02/09/拥抱社区-记一次-Qt-bug-的折腾过程/"
+           data-title="拥抱社区, 记一次 Qt bug 的折腾过程" data-url="http://www.memphis.wang/2017/02/09/拥抱社区-记一次-Qt-bug-的折腾过程/">
       </div>
     
   </div>
@@ -688,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器"><span class="nav-number">1.</span> <span class="nav-text">服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VPS-上的-Git-仓库准备"><span class="nav-number">2.</span> <span class="nav-text">VPS 上的 Git 仓库准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-Nginx-服务器"><span class="nav-number">3.</span> <span class="nav-text">配置 Nginx 服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-配置部署选项"><span class="nav-number">4.</span> <span class="nav-text">Hexo 配置部署选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过-Bare-仓库的-hook-脚本完成博客的部署"><span class="nav-number">5.</span> <span class="nav-text">通过 Bare 仓库的 hook 脚本完成博客的部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坑s"><span class="nav-number">6.</span> <span class="nav-text">坑s</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改-Nginx-root-目录以后-Nginx-出现了-403-错误"><span class="nav-number">6.0.1.</span> <span class="nav-text">修改 Nginx root 目录以后, Nginx 出现了 403 错误</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyBlogPublish-生成成功-Nginx-更新失败"><span class="nav-number">6.0.2.</span> <span class="nav-text">MyBlogPublish 生成成功, Nginx 更新失败</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#故事的开始"><span class="nav-number">1.</span> <span class="nav-text">故事的开始</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#探索与发现"><span class="nav-number">2.</span> <span class="nav-text">探索与发现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#神来的巧合"><span class="nav-number">3.</span> <span class="nav-text">神来的巧合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正轨"><span class="nav-number">4.</span> <span class="nav-text">正轨</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#徒劳"><span class="nav-number">5.</span> <span class="nav-text">徒劳</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#柳岸花明"><span class="nav-number">6.</span> <span class="nav-text">柳岸花明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#回忆"><span class="nav-number">7.</span> <span class="nav-text">回忆</span></a></li></ol></div>
             
 
           </div>

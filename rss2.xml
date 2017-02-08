@@ -8,8 +8,22 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>誰說不能讓我此生唯一自傳, 如同詩一般</description>
-    <pubDate>Mon, 30 Jan 2017 13:34:52 GMT</pubDate>
+    <pubDate>Wed, 08 Feb 2017 17:25:24 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>拥抱社区, 记一次 Qt bug 的折腾过程</title>
+      <link>http://www.memphis.wang/2017/02/09/%E6%8B%A5%E6%8A%B1%E7%A4%BE%E5%8C%BA-%E8%AE%B0%E4%B8%80%E6%AC%A1-Qt-bug-%E7%9A%84%E6%8A%98%E8%85%BE%E8%BF%87%E7%A8%8B/</link>
+      <guid>http://www.memphis.wang/2017/02/09/%E6%8B%A5%E6%8A%B1%E7%A4%BE%E5%8C%BA-%E8%AE%B0%E4%B8%80%E6%AC%A1-Qt-bug-%E7%9A%84%E6%8A%98%E8%85%BE%E8%BF%87%E7%A8%8B/</guid>
+      <pubDate>Wed, 08 Feb 2017 16:24:54 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;年初 Qt 发布了最新版本 5.8 的 Release 版本, 两天前我对自己的项目进行了版本升级, 遇到了莫名其妙的崩溃问题. 经过两天的瞎折腾之后, 仍然没有办法独立解决问题. 于是我向 Qt 社区发起了求助, 在 20 次浏览量, 15 个回复之后, 找到了问题的答案, 从此对 Qt 社区另眼相看. 趁热记录一下:&lt;/p&gt;
+      
+      </description>
+      
+      <comments>http://www.memphis.wang/2017/02/09/%E6%8B%A5%E6%8A%B1%E7%A4%BE%E5%8C%BA-%E8%AE%B0%E4%B8%80%E6%AC%A1-Qt-bug-%E7%9A%84%E6%8A%98%E8%85%BE%E8%BF%87%E7%A8%8B/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>当我们谈论组团时, 没提到的:让一些人离开</title>
