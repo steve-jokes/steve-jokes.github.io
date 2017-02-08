@@ -92,10 +92,12 @@
 <meta property="og:url" content="http://www.memphis.wang/2017/02/09/拥抱社区-记一次-Qt-bug-的折腾过程/index.html">
 <meta property="og:site_name" content="Memphis' Talk">
 <meta property="og:description" content="年初 Qt 发布了最新版本 5.8 的 Release 版本, 两天前我对自己的项目进行了版本升级, 遇到了莫名其妙的崩溃问题. 经过两天的瞎折腾之后, 仍然没有办法独立解决问题. 于是我向 Qt 社区发起了求助, 在 20 次浏览量, 15 个回复之后, 找到了问题的答案, 从此对 Qt 社区另眼相看. 趁热记录一下:">
-<meta property="og:updated_time" content="2017-02-08T17:35:41.000Z">
+<meta property="og:image" content="http://www.memphis.wang/title_bg.jpg">
+<meta property="og:updated_time" content="2017-02-08T17:46:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="拥抱社区, 记一次 Qt bug 的折腾过程">
 <meta name="twitter:description" content="年初 Qt 发布了最新版本 5.8 的 Release 版本, 两天前我对自己的项目进行了版本升级, 遇到了莫名其妙的崩溃问题. 经过两天的瞎折腾之后, 仍然没有办法独立解决问题. 于是我向 Qt 社区发起了求助, 在 20 次浏览量, 15 个回复之后, 找到了问题的答案, 从此对 Qt 社区另眼相看. 趁热记录一下:">
+<meta name="twitter:image" content="http://www.memphis.wang/title_bg.jpg">
 
 
 
@@ -414,6 +416,7 @@
       
         <p>年初 Qt 发布了最新版本 5.8 的 Release 版本, 两天前我对自己的项目进行了版本升级, 遇到了莫名其妙的崩溃问题. 经过两天的瞎折腾之后, 仍然没有办法独立解决问题. 于是我向 Qt 社区发起了求助, 在 20 次浏览量, 15 个回复之后, 找到了问题的答案, 从此对 Qt 社区另眼相看. 趁热记录一下:</p>
 <a id="more"></a>
+<p><img src="title_bg.jpg" alt=""></p>
 <h1 id="故事的开始"><a href="#故事的开始" class="headerlink" title="故事的开始"></a>故事的开始</h1><p><strong>once upon a time …</strong>, 咳咳, 没有那么久, 就在几天前, 我更新了 Qt 5.8. 新版本的 Qt Creator 在打开速度和稳定性上都有了明显的提升. 于是开开心心地享用了一个早上. <strong>然而你永远不知道明天和意外哪一个先来临</strong>, 当我将程序对接的服务器从本机切换到沙箱, 准备给同事更新一个新版本的时候, 它居然崩溃了… 于是开始了我对于这个问题的 Debug 之旅.</p>
 <h1 id="探索与发现"><a href="#探索与发现" class="headerlink" title="探索与发现"></a>探索与发现</h1><p>说时迟那时快, 我二话不说点击了 start Debuging 按钮. 程序顺利启动, 输入账号密码, 点击登录… 我了个擦嘞又崩溃了. 看来问题和这个登录请求有关.<br>这个时候我最正确的选择应该是打上断点, 开始单步调试找到程序崩溃的地方, 再仔细分析原因. 但是出于好奇和不理智, 我没有选择这个办法. 开始尝试通过现象来判断这个问题的原因.<br>于是我又切换回了本机服务器, 启动, 登录, 成功了. 看来问题出在选用的服务器上? 那么这 tmd 就很诡异了. 于是我开始分析两个服务器的不同之处:</p>
 <ul>
