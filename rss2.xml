@@ -8,8 +8,22 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>誰說不能讓我此生唯一自傳, 如同詩一般</description>
-    <pubDate>Wed, 08 Feb 2017 17:46:21 GMT</pubDate>
+    <pubDate>Sun, 12 Feb 2017 18:03:46 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>我又来了, 带来了新的 Bug</title>
+      <link>http://www.memphis.wang/2017/02/13/%E6%88%91%E5%8F%88%E6%9D%A5%E4%BA%86-%E5%B8%A6%E6%9D%A5%E4%BA%86%E6%96%B0%E7%9A%84-Bug/</link>
+      <guid>http://www.memphis.wang/2017/02/13/%E6%88%91%E5%8F%88%E6%9D%A5%E4%BA%86-%E5%B8%A6%E6%9D%A5%E4%BA%86%E6%96%B0%E7%9A%84-Bug/</guid>
+      <pubDate>Sun, 12 Feb 2017 16:45:49 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;这并不是一次复杂 Debug 过程, 也不是一篇充满干货的记录, 但这是我生平第一次为开源社区提交了我发现的 Bug, 具有象征性的意义. 鼓励着我融入这个理想主义大家庭, 贡献自己微薄的力量.&lt;/p&gt;
+      
+      </description>
+      
+      <comments>http://www.memphis.wang/2017/02/13/%E6%88%91%E5%8F%88%E6%9D%A5%E4%BA%86-%E5%B8%A6%E6%9D%A5%E4%BA%86%E6%96%B0%E7%9A%84-Bug/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>拥抱社区, 记一次 Qt bug 的折腾过程</title>
