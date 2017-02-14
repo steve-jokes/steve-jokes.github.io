@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://www.memphis.wang/2017/02/13/%E6%88%91%E5%8F%88%E6%9D%A5%E4%BA%86-%E5%B8%A6%E6%9D%A5%E4%BA%86%E6%96%B0%E7%9A%84-Bug/</loc>
+    <lastmod>2017-02-12T18:03:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>我又来了, 带来了新的 Bug</title>
+        <pubTime>2017-02-12T16:45:49.000Z</pubTime>
+        
+        <tag>qt</tag>
+         
+        <tag>debug</tag>
+         
+        <tag>社区</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="Qt" url="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/Qt/"/>
+          
+             
+              <breadCrumb title="Debug" url="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/Qt/Debug/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.memphis.wang/2017/02/09/%E6%8B%A5%E6%8A%B1%E7%A4%BE%E5%8C%BA-%E8%AE%B0%E4%B8%80%E6%AC%A1-Qt-bug-%E7%9A%84%E6%8A%98%E8%85%BE%E8%BF%87%E7%A8%8B/</loc>
+    <lastmod>2017-02-08T17:46:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>拥抱社区, 记一次 Qt bug 的折腾过程</title>
+        <pubTime>2017-02-08T16:24:54.000Z</pubTime>
+        
+        <tag>qt</tag>
+         
+        <tag>debug</tag>
+         
+        <tag>社区</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="Qt" url="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/Qt/"/>
+          
+             
+              <breadCrumb title="Debug" url="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/Qt/Debug/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>http://www.memphis.wang/2017/01/30/%E5%BD%93%E6%88%91%E4%BB%AC%E8%B0%88%E8%AE%BA%E7%BB%84%E5%9B%A2%E6%97%B6-%E6%B2%A1%E6%8F%90%E5%88%B0%E7%9A%84-%E8%AE%A9%E4%B8%80%E4%BA%9B%E4%BA%BA%E7%A6%BB%E5%BC%80/</loc>
+    <lastmod>2017-01-30T13:34:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>当我们谈论组团时, 没提到的:让一些人离开</title>
+        <pubTime>2017-01-30T13:28:21.000Z</pubTime>
+        
+        <tag>翻译</tag>
+         
+        <tag>团队</tag>
+         
+         
+           
+             
+              <breadCrumb title="翻译" url="http://www.memphis.wang/categories/%E7%BF%BB%E8%AF%91/"/>
+          
+             
+              <breadCrumb title="管理" url="http://www.memphis.wang/categories/%E7%BF%BB%E8%AF%91/%E7%AE%A1%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.memphis.wang/2017/01/30/%E9%98%B2%E5%BE%A1%E6%80%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%81%93/</loc>
+    <lastmod>2017-01-30T13:27:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>防御性编程之道</title>
+        <pubTime>2017-01-30T13:15:00.000Z</pubTime>
+        
+        <tag>翻译</tag>
+         
+        <tag>代码规范</tag>
+         
+         
+           
+             
+              <breadCrumb title="翻译" url="http://www.memphis.wang/categories/%E7%BF%BB%E8%AF%91/"/>
+          
+             
+              <breadCrumb title="技术译文" url="http://www.memphis.wang/categories/%E7%BF%BB%E8%AF%91/%E6%8A%80%E6%9C%AF%E8%AF%91%E6%96%87/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.memphis.wang/2017/01/30/%E6%88%91%E5%B0%B1%E5%8F%AB%E5%AE%83-%E5%8F%89%E5%8F%89-Manager-%E5%90%A7/</loc>
+    <lastmod>2017-01-30T13:13:01.000Z</lastmod>
+    <data>
+        <display>
+        <title>我就叫它.. 叉叉 Manager 吧</title>
+        <pubTime>2017-01-30T12:47:48.000Z</pubTime>
+        
+        <tag>翻译</tag>
+         
+        <tag>代码规范</tag>
+         
+        <tag>命名</tag>
+         
+         
+           
+             
+              <breadCrumb title="翻译" url="http://www.memphis.wang/categories/%E7%BF%BB%E8%AF%91/"/>
+          
+             
+              <breadCrumb title="技术译文" url="http://www.memphis.wang/categories/%E7%BF%BB%E8%AF%91/%E6%8A%80%E6%9C%AF%E8%AF%91%E6%96%87/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.memphis.wang/2017/01/30/Hexo-%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2017-01-29T19:32:25.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 博客的自动化部署</title>
+        <pubTime>2017-01-29T19:29:05.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>博客</tag>
+         
+        <tag>nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="博客" url="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/"/>
+          
+             
+              <breadCrumb title="网站历史" url="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/%E7%BD%91%E7%AB%99%E5%8E%86%E5%8F%B2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.memphis.wang/2017/01/29/%E8%B5%B7%E6%BA%90-Hexo/</loc>
+    <lastmod>2017-01-29T17:32:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>起源:Hexo</title>
+        <pubTime>2017-01-28T16:24:55.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>博客</tag>
+         
+        <tag>markdown</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="博客" url="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/"/>
+          
+             
+              <breadCrumb title="网站历史" url="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/%E7%BD%91%E7%AB%99%E5%8E%86%E5%8F%B2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+</urlset>
