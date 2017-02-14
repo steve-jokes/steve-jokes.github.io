@@ -12,6 +12,12 @@ language: zh-Hans
 timezone: Asia/Shanghai
 avatar: /images/avatar.webp
 
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
+
 duoshuo_shortname: memphisw
 duoshuo_share: true
 baidu_analytics: aca4acbcea6156f67675c1464ba1c800
