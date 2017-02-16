@@ -8,8 +8,22 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>誰說不能讓我此生唯一自傳, 如同詩一般</description>
-    <pubDate>Sun, 12 Feb 2017 18:03:46 GMT</pubDate>
+    <pubDate>Thu, 16 Feb 2017 17:34:36 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>提问的艺术</title>
+      <link>http://www.memphis.wang/2017/02/17/%E6%8F%90%E9%97%AE%E7%9A%84%E8%89%BA%E6%9C%AF/</link>
+      <guid>http://www.memphis.wang/2017/02/17/%E6%8F%90%E9%97%AE%E7%9A%84%E8%89%BA%E6%9C%AF/</guid>
+      <pubDate>Thu, 16 Feb 2017 17:22:44 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;这篇文章一直是我的最爱之一, 告诉我在学习交流的过程中, 有哪些事情该做, 哪些不该做才不会引起别人的反感, 强烈建议软件行业入行的新人们阅读. 今天在找这篇文章回顾时, 发现网上大多的中文版本都没有一个良好的排版, 所以在我的博客中重新精排一次, 并对其中一些过时的翻译重新作出调整, 欢迎大家引用, 并注明出处.&lt;/p&gt;
+      
+      </description>
+      
+      <comments>http://www.memphis.wang/2017/02/17/%E6%8F%90%E9%97%AE%E7%9A%84%E8%89%BA%E6%9C%AF/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>我又来了, 带来了新的 Bug</title>
