@@ -8,8 +8,23 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>誰說不能讓我此生唯一自傳, 如同詩一般</description>
-    <pubDate>Thu, 16 Feb 2017 17:34:36 GMT</pubDate>
+    <pubDate>Tue, 28 Feb 2017 17:39:02 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>拥抱 Git</title>
+      <link>http://www.memphis.wang/2017/03/01/%E6%8B%A5%E6%8A%B1-Git/</link>
+      <guid>http://www.memphis.wang/2017/03/01/%E6%8B%A5%E6%8A%B1-Git/</guid>
+      <pubDate>Tue, 28 Feb 2017 17:39:02 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;Git 无疑是当今互联网最酷, 最炙手可热的版本管理系统, 没有之一. 由 Linux 之父 Linus 一手缔造, 其由来也一如 Linux 一般传奇. 如果你还未了解它, 请参看迟建强的一篇文章 &lt;a href=&quot;https://zhuanlan.zhihu.com/p/19796979&quot;&gt;Linus，一生只为寻找欢笑&lt;/a&gt;. 如果你想要学习它, 推荐从廖雪峰的 &lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000&quot;&gt;Git 教程&lt;/a&gt; 入门, 然后再通过阅读书籍等途径深入学习.&lt;/p&gt;
+&lt;p&gt;今天我要安利的并非 Git, 而是 &lt;strong&gt;Githug&lt;/strong&gt;. &lt;a href=&quot;https://github.com/Gazler/githug&quot;&gt;Githug&lt;/a&gt; 是 &lt;a href=&quot;https://github.com/Gazler&quot;&gt;Gary Rennie&lt;/a&gt; 在 Github 上建立的一个开源项目. 是一个基于 Git 的闯关小游戏, 将许多的应用场景提炼成关卡, 用来练习你的 Git 技能.&lt;/p&gt;
+      
+      </description>
+      
+      <comments>http://www.memphis.wang/2017/03/01/%E6%8B%A5%E6%8A%B1-Git/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>提问的艺术</title>
