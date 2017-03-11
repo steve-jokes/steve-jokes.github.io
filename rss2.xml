@@ -8,8 +8,23 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>誰說不能讓我此生唯一自傳, 如同詩一般</description>
-    <pubDate>Tue, 28 Feb 2017 17:39:02 GMT</pubDate>
+    <pubDate>Sat, 11 Mar 2017 13:29:45 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>年轻的技术合伙人, 你所付出的将比你想象中的多</title>
+      <link>http://www.memphis.wang/2017/03/11/%E5%B9%B4%E8%BD%BB%E7%9A%84%E6%8A%80%E6%9C%AF%E5%90%88%E4%BC%99%E4%BA%BA-%E4%BD%A0%E6%89%80%E4%BB%98%E5%87%BA%E7%9A%84%E5%B0%86%E6%AF%94%E4%BD%A0%E6%83%B3%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%A4%9A/</link>
+      <guid>http://www.memphis.wang/2017/03/11/%E5%B9%B4%E8%BD%BB%E7%9A%84%E6%8A%80%E6%9C%AF%E5%90%88%E4%BC%99%E4%BA%BA-%E4%BD%A0%E6%89%80%E4%BB%98%E5%87%BA%E7%9A%84%E5%B0%86%E6%AF%94%E4%BD%A0%E6%83%B3%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%A4%9A/</guid>
+      <pubDate>Sat, 11 Mar 2017 11:08:44 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;福州厦门的房价在过去的十几个月中, 不断地上升. 前年住所附近的侨福城, 80 多平米的小户型卖到了三百多万. 在榕在厦的年轻人如若不是有些家底, 根本不用指望自己的薪水和存款能够跟上房价的涨幅. 可能今年算出来不吃不喝攒满 7 年(算上定期存款的复利)能够凑足一套小户型的首付, 到了明年发现离这个目标并没有变得更近. &lt;/p&gt;
+&lt;p&gt;在房价和未来丈母娘的高压之下, 年轻人实现财富自由的阈值变得越来越高. 加之中国社会的上升通道正在不断地收窄, 年轻人不论是想实现自我的价值, 还是只是单纯地想富成一个废物, 光靠单纯的打工挣钱已经很难实现了. &lt;/p&gt;
+      
+      </description>
+      
+      <comments>http://www.memphis.wang/2017/03/11/%E5%B9%B4%E8%BD%BB%E7%9A%84%E6%8A%80%E6%9C%AF%E5%90%88%E4%BC%99%E4%BA%BA-%E4%BD%A0%E6%89%80%E4%BB%98%E5%87%BA%E7%9A%84%E5%B0%86%E6%AF%94%E4%BD%A0%E6%83%B3%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%A4%9A/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>拥抱 Git</title>
