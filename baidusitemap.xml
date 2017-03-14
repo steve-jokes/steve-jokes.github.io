@@ -4,6 +4,40 @@
 
     
   <url>
+    <loc>http://www.memphis.wang/2017/03/14/Qt-C-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%9B%86%E6%88%90-Python-with-site-package-%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2017-03-14T08:17:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>Qt(C++) 跨平台集成 Python(with site-package) 完全指南</title>
+        <pubTime>2017-03-14T02:43:46.000Z</pubTime>
+        
+        <tag>qt</tag>
+         
+        <tag>c++</tag>
+         
+        <tag>python</tag>
+         
+        <tag>跨平台</tag>
+         
+        <tag>部署</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+             
+              <breadCrumb title="Qt" url="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/Qt/"/>
+          
+             
+              <breadCrumb title="部署" url="http://www.memphis.wang/categories/%E6%8A%80%E6%9C%AF/Qt/%E9%83%A8%E7%BD%B2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.memphis.wang/2017/03/11/%E5%B9%B4%E8%BD%BB%E7%9A%84%E6%8A%80%E6%9C%AF%E5%90%88%E4%BC%99%E4%BA%BA-%E4%BD%A0%E6%89%80%E4%BB%98%E5%87%BA%E7%9A%84%E5%B0%86%E6%AF%94%E4%BD%A0%E6%83%B3%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%A4%9A/</loc>
     <lastmod>2017-03-14T02:37:12.000Z</lastmod>
     <data>
@@ -34,11 +68,11 @@
         <title>当我们谈论组团时, 没提到的:让一些人离开</title>
         <pubTime>2017-01-30T13:28:21.000Z</pubTime>
         
-        <tag>创业</tag>
-         
         <tag>翻译</tag>
          
         <tag>团队</tag>
+         
+        <tag>创业</tag>
          
          
            

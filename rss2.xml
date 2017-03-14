@@ -8,8 +8,23 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>誰說不能讓我此生唯一自傳, 如同詩一般</description>
-    <pubDate>Tue, 14 Mar 2017 02:37:12 GMT</pubDate>
+    <pubDate>Tue, 14 Mar 2017 08:17:46 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Qt(C++) 跨平台集成 Python(with site-package) 完全指南</title>
+      <link>http://www.memphis.wang/2017/03/14/Qt-C-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%9B%86%E6%88%90-Python-with-site-package-%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</link>
+      <guid>http://www.memphis.wang/2017/03/14/Qt-C-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%9B%86%E6%88%90-Python-with-site-package-%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</guid>
+      <pubDate>Tue, 14 Mar 2017 02:43:46 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;Qt 无疑是桌面客户端的开发的上上之选之一. 跨多平台自然不必多说, 更新稳定, 工具支持完整, 社区健全. 能够让开发者保持一个比较高的开发效率. 如果你还嫌业务逻辑的开发效率不够高, 或者移植性不够好. 没有问题, 你还可以选择 Python 脚本来实现你的业务逻辑. 将 Python 集成到你的 Qt 应用中. 这样你可以同时高效地开发 GUI, 高效地编写业务逻辑. 这个技术栈我已经使用了两年, 虽然现在有些想法觉得可能有更好的选择(比如 Qt(QML) + Golang), 但是这套搭配我还是非常推崇的.&lt;/p&gt;
+&lt;p&gt;不过在使用这个搭配的过程中, 有一个问题困扰了我很久. 就是 Python 环境如何干净地集成到 Qt 中, 既不影响用户自身的 Python 环境, 也不要受到用户本地 Python 的影响. 由于本地环境的干扰, 很长一段时间内我发布的程序都是在使用用户的 Python 环境, 而我完全都没有发觉, 直到用户低版本的 Python 出现了 bug 才发现了这个问题. 而 Python 环境集成的错误, 也导致我不能够正常的使用我需要的 site-package, 一番摸索之后, 这个问题总算是解决了. 最近有点时间, 对之前的处理做个总结, 免得后人踩坑.&lt;/p&gt;
+      
+      </description>
+      
+      <comments>http://www.memphis.wang/2017/03/14/Qt-C-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%9B%86%E6%88%90-Python-with-site-package-%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>年轻的技术合伙人, 你所付出的将比你想象中的多</title>
