@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>http://www.memphis.wang/2017/01/30/%E9%98%B2%E5%BE%A1%E6%80%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%81%93/</loc>
+    <lastmod>2017-06-01T05:56:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>防御性编程之道</title>
+        <pubTime>2017-01-30T13:15:00.000Z</pubTime>
+        
+        <tag>翻译</tag>
+         
+        <tag>代码规范</tag>
+         
+         
+           
+             
+              <breadCrumb title="翻译" url="http://www.memphis.wang/categories/%E7%BF%BB%E8%AF%91/"/>
+          
+             
+              <breadCrumb title="技术译文" url="http://www.memphis.wang/categories/%E7%BF%BB%E8%AF%91/%E6%8A%80%E6%9C%AF%E8%AF%91%E6%96%87/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.memphis.wang/2017/03/14/Qt-C-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%9B%86%E6%88%90-Python-with-site-package-%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</loc>
     <lastmod>2017-03-14T08:17:46.000Z</lastmod>
     <data>
@@ -68,11 +93,11 @@
         <title>当我们谈论组团时, 没提到的:让一些人离开</title>
         <pubTime>2017-01-30T13:28:21.000Z</pubTime>
         
+        <tag>创业</tag>
+         
         <tag>翻译</tag>
          
         <tag>团队</tag>
-         
-        <tag>创业</tag>
          
          
            
@@ -206,31 +231,6 @@
 
     
     
-    
-  <url>
-    <loc>http://www.memphis.wang/2017/01/30/%E9%98%B2%E5%BE%A1%E6%80%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%81%93/</loc>
-    <lastmod>2017-01-30T13:27:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>防御性编程之道</title>
-        <pubTime>2017-01-30T13:15:00.000Z</pubTime>
-        
-        <tag>翻译</tag>
-         
-        <tag>代码规范</tag>
-         
-         
-           
-             
-              <breadCrumb title="翻译" url="http://www.memphis.wang/categories/%E7%BF%BB%E8%AF%91/"/>
-          
-             
-              <breadCrumb title="技术译文" url="http://www.memphis.wang/categories/%E7%BF%BB%E8%AF%91/%E6%8A%80%E6%9C%AF%E8%AF%91%E6%96%87/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://www.memphis.wang/2017/01/30/%E6%88%91%E5%B0%B1%E5%8F%AB%E5%AE%83-%E5%8F%89%E5%8F%89-Manager-%E5%90%A7/</loc>
