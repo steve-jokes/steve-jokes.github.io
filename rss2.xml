@@ -8,8 +8,22 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>誰說不能讓我此生唯一自傳, 如同詩一般</description>
-    <pubDate>Tue, 14 Mar 2017 08:17:46 GMT</pubDate>
+    <pubDate>Wed, 19 Jul 2017 08:47:17 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Qt 集成 ImageMagick 实录</title>
+      <link>http://www.memphis.wang/2017/07/19/Qt-%E9%9B%86%E6%88%90-ImageMagick-%E5%AE%9E%E5%BD%95/</link>
+      <guid>http://www.memphis.wang/2017/07/19/Qt-%E9%9B%86%E6%88%90-ImageMagick-%E5%AE%9E%E5%BD%95/</guid>
+      <pubDate>Wed, 19 Jul 2017 08:47:17 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;近来需要基于 Qt 写一个桌面客户端视频编辑工具, 可以切割视频分段, 为部分分段增加蒙版图片, 再生成一份配置以供后续使用. 这期间使用到了 FFmpeg 和 ImageMagick 两个优秀的第三方开源框架. FFmpeg 的集成最终使用了调用命令行参数的方式, 因为 FFmpeg 提供的 C 形式 api 难于阅读, 而且没有一份详尽的 capi 文档, 故作罢. 而 ImageMagick 的集成并没有使用命令行方式, 原因是 ImageMagick 似乎依赖了比较多的东西, 调用命令行时会遇到诸多问题. 比如腾讯退出的图片压缩工具智图, 就需要用户额外自己安装一个 ImageMagick 以供调用. 还提供了一个 GUI 的 ImageMagick 安装方式, 使用起来体验并不理想. 所以最终我选择了使用 ImageMagick 的 C++ 形式来集成之. 但是这个过程也是一波三折, 记录一下, 后来人有缘相见, 免得白折了诸多时间. &lt;/p&gt;
+      
+      </description>
+      
+      <comments>http://www.memphis.wang/2017/07/19/Qt-%E9%9B%86%E6%88%90-ImageMagick-%E5%AE%9E%E5%BD%95/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Qt(C++) 跨平台集成 Python(with site-package) 完全指南</title>

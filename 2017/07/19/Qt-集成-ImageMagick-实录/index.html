@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="翻译,代码规范,命名," />
+  <meta name="keywords" content="qt,c++,部署,ImageMagick," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="关于编程实践中的命名规范, 大学舍友在舍群里分享了一篇文章 I Shall Call It.. SomethingManager, 觉得蛮有意思而且感同身受, 简单翻译一下分享给大家.">
+<meta name="description" content="近来需要基于 Qt 写一个桌面客户端视频编辑工具, 可以切割视频分段, 为部分分段增加蒙版图片, 再生成一份配置以供后续使用. 这期间使用到了 FFmpeg 和 ImageMagick 两个优秀的第三方开源框架. FFmpeg 的集成最终使用了调用命令行参数的方式, 因为 FFmpeg 提供的 C 形式 api 难于阅读, 而且没有一份详尽的 capi 文档, 故作罢. 而 ImageMagick">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我就叫它.. 叉叉 Manager 吧">
-<meta property="og:url" content="http://www.memphis.wang/2017/01/30/我就叫它-叉叉-Manager-吧/index.html">
+<meta property="og:title" content="Qt 集成 ImageMagick 实录">
+<meta property="og:url" content="http://www.memphis.wang/2017/07/19/Qt-集成-ImageMagick-实录/index.html">
 <meta property="og:site_name" content="Memphis' Talk">
-<meta property="og:description" content="关于编程实践中的命名规范, 大学舍友在舍群里分享了一篇文章 I Shall Call It.. SomethingManager, 觉得蛮有意思而且感同身受, 简单翻译一下分享给大家.">
-<meta property="og:updated_time" content="2017-01-30T13:13:01.000Z">
+<meta property="og:description" content="近来需要基于 Qt 写一个桌面客户端视频编辑工具, 可以切割视频分段, 为部分分段增加蒙版图片, 再生成一份配置以供后续使用. 这期间使用到了 FFmpeg 和 ImageMagick 两个优秀的第三方开源框架. FFmpeg 的集成最终使用了调用命令行参数的方式, 因为 FFmpeg 提供的 C 形式 api 难于阅读, 而且没有一份详尽的 capi 文档, 故作罢. 而 ImageMagick">
+<meta property="og:updated_time" content="2017-07-19T08:47:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我就叫它.. 叉叉 Manager 吧">
-<meta name="twitter:description" content="关于编程实践中的命名规范, 大学舍友在舍群里分享了一篇文章 I Shall Call It.. SomethingManager, 觉得蛮有意思而且感同身受, 简单翻译一下分享给大家.">
+<meta name="twitter:title" content="Qt 集成 ImageMagick 实录">
+<meta name="twitter:description" content="近来需要基于 Qt 写一个桌面客户端视频编辑工具, 可以切割视频分段, 为部分分段增加蒙版图片, 再生成一份配置以供后续使用. 这期间使用到了 FFmpeg 和 ImageMagick 两个优秀的第三方开源框架. FFmpeg 的集成最终使用了调用命令行参数的方式, 因为 FFmpeg 提供的 C 形式 api 难于阅读, 而且没有一份详尽的 capi 文档, 故作罢. 而 ImageMagick">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://www.memphis.wang/2017/01/30/我就叫它-叉叉-Manager-吧/"/>
+  <link rel="canonical" href="http://www.memphis.wang/2017/07/19/Qt-集成-ImageMagick-实录/"/>
 
 
 
 
 
-  <title> 我就叫它.. 叉叉 Manager 吧 | Memphis' Talk </title>
+  <title> Qt 集成 ImageMagick 实录 | Memphis' Talk </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -272,7 +272,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://www.memphis.wang/2017/01/30/我就叫它-叉叉-Manager-吧/">
+  <link itemprop="mainEntityOfPage" href="http://www.memphis.wang/2017/07/19/Qt-集成-ImageMagick-实录/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Memphis.W">
@@ -296,7 +296,7 @@
             
             
               
-                我就叫它.. 叉叉 Manager 吧
+                Qt 集成 ImageMagick 实录
               
             
           </h1>
@@ -311,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-30T20:47:48+08:00">
-                2017-01-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-19T16:47:17+08:00">
+                2017-07-19
               </time>
             
 
@@ -334,8 +334,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/翻译/" itemprop="url" rel="index">
-                    <span itemprop="name">翻译</span>
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
                   </a>
                 </span>
 
@@ -345,8 +345,19 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/翻译/技术译文/" itemprop="url" rel="index">
-                    <span itemprop="name">技术译文</span>
+                  <a href="/categories/技术/Qt/" itemprop="url" rel="index">
+                    <span itemprop="name">Qt</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/Qt/部署/" itemprop="url" rel="index">
+                    <span itemprop="name">部署</span>
                   </a>
                 </span>
 
@@ -363,8 +374,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/30/我就叫它-叉叉-Manager-吧/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/30/我就叫它-叉叉-Manager-吧/" itemprop="commentCount"></span>
+                <a href="/2017/07/19/Qt-集成-ImageMagick-实录/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/07/19/Qt-集成-ImageMagick-实录/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -374,7 +385,7 @@
 
           
           
-             <span id="/2017/01/30/我就叫它-叉叉-Manager-吧/" class="leancloud_visitors" data-flag-title="我就叫它.. 叉叉 Manager 吧">
+             <span id="/2017/07/19/Qt-集成-ImageMagick-实录/" class="leancloud_visitors" data-flag-title="Qt 集成 ImageMagick 实录">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -401,44 +412,31 @@
       
 
       
-        <p>关于编程实践中的命名规范, 大学舍友在舍群里分享了一篇文章 <a href="https://blog.codinghorror.com/i-shall-call-it-somethingmanager/" target="_blank" rel="external">I Shall Call It.. SomethingManager</a>, 觉得蛮有意思而且感同身受, 简单翻译一下分享给大家.</p>
+        <p>近来需要基于 Qt 写一个桌面客户端视频编辑工具, 可以切割视频分段, 为部分分段增加蒙版图片, 再生成一份配置以供后续使用. 这期间使用到了 FFmpeg 和 ImageMagick 两个优秀的第三方开源框架. FFmpeg 的集成最终使用了调用命令行参数的方式, 因为 FFmpeg 提供的 C 形式 api 难于阅读, 而且没有一份详尽的 capi 文档, 故作罢. 而 ImageMagick 的集成并没有使用命令行方式, 原因是 ImageMagick 似乎依赖了比较多的东西, 调用命令行时会遇到诸多问题. 比如腾讯退出的图片压缩工具智图, 就需要用户额外自己安装一个 ImageMagick 以供调用. 还提供了一个 GUI 的 ImageMagick 安装方式, 使用起来体验并不理想. 所以最终我选择了使用 ImageMagick 的 C++ 形式来集成之. 但是这个过程也是一波三折, 记录一下, 后来人有缘相见, 免得白折了诸多时间. </p>
 <a id="more"></a>
-<p>Alan Green 在  <a href="http://www.bright-green.com/blog/2003_02_25/naming_java_classes_without_a.html" target="_blank" rel="external">the meaninglessness of SomethingManager</a> 中抱怨:</p>
-<blockquote>
-<p>你遇见过多少叫做叉叉管理器的类? 任何像样规模的商业系统似乎都有着一大堆</p>
+<p><img src="" alt=""></p>
+<h1 id="获得-ImageMagick"><a href="#获得-ImageMagick" class="headerlink" title="获得 ImageMagick"></a>获得 ImageMagick</h1><p>最初我使用 home brew 自动安装的版本来使用, 可是部署过程中遇到了种种问题, 在 IRC 频道和 Github 上多方交流都未能解决. 虽然现在这些问题看起来都没什么了, 不过这里我还是建议大家自己获取<a href="https://github.com/ImageMagick/ImageMagick" target="_blank" rel="external">源码</a>来编译, 因为 ./configure 过程中有一些参数需要配置的, 使用 brew 指定的话, 我目前还没有亲测过.</p>
+<p>这里放送上我的操作步骤:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git clone git@github.com:ImageMagick/ImageMagick.git</div><div class="line">cd ImageMagick</div><div class="line">./configure --prefix=/path/to/install/dir/ImageMagickInstall --without-x --without-webp --without-xml --without-tiff --without-jpeg --with-png  --enable-shared=yes --enable-static=yes --enable-zero-configuration</div><div class="line">make</div><div class="line">make install</div></pre></td></tr></table></figure></p>
+<p>注意几个地方:</p>
 <ul>
-<li>SessionManager # 对话管理器</li>
-<li>ConnectionManager # 连接管理器</li>
-<li>PolicyManager # 策略管理器</li>
-<li>QueueManager # 队列管理器</li>
-<li>UrlManager # 统一资源定位符管理器</li>
-<li>ConfigurationManager # 配置管理器</li>
-<li>或者再悲剧一点 EJBManager # 一级棒管理器 2333</li>
+<li>推荐使用 –prefix 重新定义安装路径, 不要加到系统默认路径中, 这样之后也比较容易在本机测试程序在无 ImageMagick 环境下能否正常运行</li>
+<li>根据需要自行选择需要 –without-哪些模块</li>
+<li>推荐使用 –enable-zero-configuration 参数, 这样程序不会依赖 etc 中的 xml 配置文件, 在后期部署的时候, 能够省去不少麻烦</li>
+<li>这样安装结束后, 在 ImageMagickInstall 目录中, 会生成 Include 目录, lib 目录. lib 目录中有动态库和静态库, 你可以自行选择通过哪种方式来集成</li>
+<li>lib 中有几个链接可以使用, 最好不要使用哦, 因为链接写死了指向的绝对路径, 不方便你将动态库移到其他目录</li>
 </ul>
-<p>随便在字典中扫一眼  <a href="http://www.merriam-webster.com/dictionary/manager" target="_blank" rel="external">“manager”</a> 或者 <a href="http://www.merriam-webster.com/dictionary/manage" target="_blank" rel="external">“manage”</a>  条目, 你就能发现至少十种不同的意思. 从 “使人顺从” 到 “成功做到了某事”, 又比如某天我碰到一个接线员称呼自己为 “总机管理员 “, 这些各式各样的定义中, 通用的语义好像就是一个模糊的概念 –  “照看好某些东西”.</p>
-<p>这样的不确定性使得在为类命名的时候,  “Manager” 成为了一个非常糟糕的选择. 举个例子, 有个叫做 UrlManager 的类 – 你没办法从名字中知道它是存储 Url 用的还是操作 Url 用的还是用来审计 Url 的使用情况的. 从名字中获得的仅有的信息是这个类完成了一些和 Url 相关的操作. 而 “UrlBuilder” 这样的名字就能更清楚地告诉你这个类是做什么用的.</p>
-<p>在 Java 世界中, “Manager” 这个后缀到处被滥用, 一旦有一个类以任何形式对其他对象起到一个负责作用, 这个类总是被自动打上管理器的标签.</p>
-</blockquote>
-<p>再没没有比叉叉 Manager 更含糊的概念了, 为了避免这个单词, Alan 在<a href="http://www.bright-green.com/blog/2003_02_25/naming_java_classes_without_a.html" target="_blank" rel="external">他的博客</a>中给出了几个替代性的建议, 或许能够更加精确地表达出你的类到底是用来做什么的.</p>
-<p>给自己的类和其他对象取一个描述清晰的好名字不是一件容易的事情, Steve McConnell 在 <a href="https://www.amazon.cn/dp/B0061XKRXA/" target="_blank" rel="external">代码大全</a> 这本书中给出了几个有用的指导性意见:</p>
-<blockquote>
-<ol>
-<li>描述清楚你的代码流程做的所有事情<br>对, 我们说的是实打实的所有事情, 如果这让你的命名变得可笑地冗长, 名字不是问题, 可能是你的代码流程有问题</li>
-<li>避免无意义, 混淆, 软弱无力的动词, 比如:<ul>
-<li>UrlManager # 统一资源定位符管理器</li>
-<li>HandleOutput() # 处理输出?</li>
-<li>PerformServices() # 运行服务?</li>
+<h1 id="配置-pro-文件"><a href="#配置-pro-文件" class="headerlink" title="配置 pro 文件"></a>配置 pro 文件</h1><p>之后就可以在 Qt.pro 文件中配置对 ImageMagick 的引用啦:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">mac &#123;</div><div class="line">    DEFINES += &quot;MAGICKCORE_HDRI_ENABLE=1&quot;</div><div class="line">    DEFINES += &quot;MAGICKCORE_QUANTUM_DEPTH=16&quot;</div><div class="line"></div><div class="line">    INCLUDEPATH += $$PWD/third_tools/mac/image_magick/include/ImageMagick-7 </div><div class="line">    DEPENDPATH += $$PWD/third_tools/mac/image_magick/include/ImageMagick-7</div><div class="line"></div><div class="line">    LIBS += -L$$PWD/third_tools/mac/image_magick/lib -lMagick++-7.Q16HDRI.3 -lMagickWand-7.Q16HDRI.3 -lMagickCore-7.Q16HDRI.3</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意几个地方:</p>
+<ul>
+<li>这里我写的是我放置 include lib 目录的路径, 你需要自行修改成你的目录</li>
+<li>添加库的时候, 建议不要使用 -lMagick++-7.Q16HDRI 而是 -lMagick++-7.Q16HDRI.3, 原因是前者是个链接, 可能记录到原始地址去了</li>
+<li>两个宏定义是我之前根据 Magick++-config –cppflags –cxxflags –ldflags –libs 得到的, 照着用就可以</li>
 </ul>
-</li>
-<li>别单用数字来区分不同的代码流程(真是做大死)<br>我只是为了完整性才在这里提这件事情, 如果你的代码中居然有 <code>OutputUser1()</code> 和 <code>OutputUser2()</code> 这样的名称, 那就只能让上帝保佑你和你的团队了.</li>
-<li>名字越长越好<br>根据 McConnell 的说法, 命名的最佳长度大约在 9 - 15 个字母, 代码流程(函数)因为处理了更复杂的流程所以应该要有更长的名称, 为了使你的代码更容易地被人读懂, 请尽可能地选用长一点的名字.</li>
-<li>对于函数, 尝试使用对返回值的描述作为名称<br>这个规则简单直接, 举些例子: <code>printer.IsReady()</code>, <code>pen.CurrentColor()</code> 等等</li>
-<li>使用精确的反义词<br>对应 <code>Open()</code> 使用 <code>Close()</code><br>对应 <code>Insert()</code> 使用 <code>Delete()</code><br>对应 <code>Start()</code> 使用 <code>Stop()</code></li>
-<li>对通用的操作建立命名规约<br>举一个反面例子: 如果代码同时存在 <code>employee.id.Get()</code>, <code>dependent.GetId()</code>, <code>supervisor()</code>, <code>candidate.id()</code> 这些命名方式, 你能知道如何获得 <code>newbee</code> 的 id 吗</li>
-</ol>
-</blockquote>
-<p>我得说我的重构行为中, 最常做的就是重命名各种类和变量. <a href="http://martinfowler.com/bliki/TwoHardThings.html" target="_blank" rel="external">取一个好名字是一件难事</a>, 它也应该困难, 因为一个好名字需要利用三两个单词抓住关键的意思. 有时候在你完全写完所有逻辑之前, 你很难知道该如何命名这块代码. 而在实际生产中, 代码是逻辑总是写不到头的, 所以名字可能一直都在变.</p>
-<p>一个简洁的, 描述性的变量, 对象或函数名能为你的代码代码许多正面积极的作用, 否则就这能沦为 <a href="http://thedailywtf.com/" target="_blank" rel="external">Daily WTF code</a> 中用来举反例的货色了.</p>
+<h1 id="引用-编译"><a href="#引用-编译" class="headerlink" title="引用, 编译"></a>引用, 编译</h1><p>qmake 之后, 你就可以在程序中顺利的 <code>#include &lt;Magick++.h&gt;</code> 并且编译链接成功啦, 不出意外的话, 现在应该可能正常使用这些功能</p>
+<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p>当发布 release 版本时, 需要为程序附加上使用到的动态库, 要用到 qt 提供的 macdeployqt 命令<br><code>macdeployqt path/to/your/app -qmldir=path/to/your/qmldir</code><br>当然如果你写的是纯 cpp 代码, 不需要添加 -qmldir 参数</p>
+<p>这期间你会遇到这样一个问题:  如果你像我一样, 移动过动态库的目录的话, macdeployqt 提示找不到 ImageMagick 的动态库, 你会发现打印出来的动态库地址是你一开始编译生成时动态库的地址<br>这是因为动态库的 id 记录了它的原始地址, macdeployqt 会根据这个地址去复制动态库到程序的 <code>Contents/Frameworks</code> 目录下, 你可以使用 <code>otool -L dylib/path</code> 来查看它的 id 地址. 就是第一行你看到的路径. 遇到这个问题不要慌, 苹果提供了 <code>install_name_tool</code> 工具来修复这个问题. 简单暴力的做法就是 <code>install_name_tool -id dylib/absolute/path dylib/absolute/path</code>, 再次 otool 你会发现第一行的路径已经修复, 可是还有一些依赖的路径仍然是旧的绝对路径, 这时候要使用 <code>install_name_tool -change old/absolute/dependence/lib/path new/absolute/dependence/lib/path target/absolute/lib/path</code> 来修复.<br>完成了这些, 再次使用 <code>macdeployqt</code> 来部署动态库时, 这些动态库就能顺利地被复制到 <code>Contents/Frameworks</code> 目录下, 并且处理好依赖路径的更新了</p>
+<h1 id="未完成"><a href="#未完成" class="headerlink" title="未完成"></a>未完成</h1><p>使用这种方式部署以后, 在部分机器上还会有动态库找不到而打不开的问题. 这是因为有些机器没有安装 libtool, 而我并没有将其编译依赖下去. 有一个临时的解决办法是: <a href="https://coderwall.com/p/8pajlg/fixing-library-not-loaded-usr-local-lib-libltdl-7-dylib" target="_blank" rel="external">https://coderwall.com/p/8pajlg/fixing-library-not-loaded-usr-local-lib-libltdl-7-dylib</a>, 做到这里, 我已经可以在一个陌生环境中运行我的代码, 并且使用 ImageMagick 了. 以上.</p>
 
       
     </div>
@@ -462,11 +460,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/翻译/" rel="tag"># 翻译</a>
+            <a href="/tags/qt/" rel="tag"># qt</a>
           
-            <a href="/tags/代码规范/" rel="tag"># 代码规范</a>
+            <a href="/tags/c/" rel="tag"># c++</a>
           
-            <a href="/tags/命名/" rel="tag"># 命名</a>
+            <a href="/tags/部署/" rel="tag"># 部署</a>
+          
+            <a href="/tags/ImageMagick/" rel="tag"># ImageMagick</a>
           
         </div>
       
@@ -475,8 +475,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/30/Hexo-博客的自动化部署/" rel="next" title="Hexo 博客的自动化部署">
-                <i class="fa fa-chevron-left"></i> Hexo 博客的自动化部署
+              <a href="/2017/03/14/Qt-C-跨平台集成-Python-with-site-package-完全指南/" rel="next" title="Qt(C++) 跨平台集成 Python(with site-package) 完全指南">
+                <i class="fa fa-chevron-left"></i> Qt(C++) 跨平台集成 Python(with site-package) 完全指南
               </a>
             
           </div>
@@ -484,10 +484,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/30/防御性编程之道/" rel="prev" title="防御性编程之道">
-                防御性编程之道 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -502,10 +498,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/01/30/我就叫它-叉叉-Manager-吧/"
-     data-title="我就叫它.. 叉叉 Manager 吧"
+        <div class="ds-share flat" data-thread-key="2017/07/19/Qt-集成-ImageMagick-实录/"
+     data-title="Qt 集成 ImageMagick 实录"
      data-content=""
-     data-url="http://www.memphis.wang/2017/01/30/我就叫它-叉叉-Manager-吧/">
+     data-url="http://www.memphis.wang/2017/07/19/Qt-集成-ImageMagick-实录/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -532,8 +528,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/01/30/我就叫它-叉叉-Manager-吧/"
-           data-title="我就叫它.. 叉叉 Manager 吧" data-url="http://www.memphis.wang/2017/01/30/我就叫它-叉叉-Manager-吧/">
+      <div class="ds-thread" data-thread-key="2017/07/19/Qt-集成-ImageMagick-实录/"
+           data-title="Qt 集成 ImageMagick 实录" data-url="http://www.memphis.wang/2017/07/19/Qt-集成-ImageMagick-实录/">
       </div>
     
   </div>
@@ -557,8 +553,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.webp"
@@ -659,6 +664,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#获得-ImageMagick"><span class="nav-number">1.</span> <span class="nav-text">获得 ImageMagick</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置-pro-文件"><span class="nav-number">2.</span> <span class="nav-text">配置 pro 文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引用-编译"><span class="nav-number">3.</span> <span class="nav-text">引用, 编译</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署"><span class="nav-number">4.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#未完成"><span class="nav-number">5.</span> <span class="nav-text">未完成</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
