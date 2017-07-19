@@ -92,10 +92,12 @@
 <meta property="og:url" content="http://www.memphis.wang/2017/07/19/Qt-集成-ImageMagick-实录/index.html">
 <meta property="og:site_name" content="Memphis' Talk">
 <meta property="og:description" content="近来需要基于 Qt 写一个桌面客户端视频编辑工具, 可以切割视频分段, 为部分分段增加蒙版图片, 再生成一份配置以供后续使用. 这期间使用到了 FFmpeg 和 ImageMagick 两个优秀的第三方开源框架. FFmpeg 的集成最终使用了调用命令行参数的方式, 因为 FFmpeg 提供的 C 形式 api 难于阅读, 而且没有一份详尽的 capi 文档, 故作罢. 而 ImageMagick">
-<meta property="og:updated_time" content="2017-07-19T08:47:17.000Z">
+<meta property="og:image" content="http://www.memphis.wang/wizard.png">
+<meta property="og:updated_time" content="2017-07-19T08:59:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Qt 集成 ImageMagick 实录">
 <meta name="twitter:description" content="近来需要基于 Qt 写一个桌面客户端视频编辑工具, 可以切割视频分段, 为部分分段增加蒙版图片, 再生成一份配置以供后续使用. 这期间使用到了 FFmpeg 和 ImageMagick 两个优秀的第三方开源框架. FFmpeg 的集成最终使用了调用命令行参数的方式, 因为 FFmpeg 提供的 C 形式 api 难于阅读, 而且没有一份详尽的 capi 文档, 故作罢. 而 ImageMagick">
+<meta name="twitter:image" content="http://www.memphis.wang/wizard.png">
 
 
 
@@ -414,7 +416,7 @@
       
         <p>近来需要基于 Qt 写一个桌面客户端视频编辑工具, 可以切割视频分段, 为部分分段增加蒙版图片, 再生成一份配置以供后续使用. 这期间使用到了 FFmpeg 和 ImageMagick 两个优秀的第三方开源框架. FFmpeg 的集成最终使用了调用命令行参数的方式, 因为 FFmpeg 提供的 C 形式 api 难于阅读, 而且没有一份详尽的 capi 文档, 故作罢. 而 ImageMagick 的集成并没有使用命令行方式, 原因是 ImageMagick 似乎依赖了比较多的东西, 调用命令行时会遇到诸多问题. 比如腾讯退出的图片压缩工具智图, 就需要用户额外自己安装一个 ImageMagick 以供调用. 还提供了一个 GUI 的 ImageMagick 安装方式, 使用起来体验并不理想. 所以最终我选择了使用 ImageMagick 的 C++ 形式来集成之. 但是这个过程也是一波三折, 记录一下, 后来人有缘相见, 免得白折了诸多时间. </p>
 <a id="more"></a>
-<p><img src="" alt=""></p>
+<p><img src="wizard.png" alt="qt and ImageMagick"></p>
 <h1 id="获得-ImageMagick"><a href="#获得-ImageMagick" class="headerlink" title="获得 ImageMagick"></a>获得 ImageMagick</h1><p>最初我使用 home brew 自动安装的版本来使用, 可是部署过程中遇到了种种问题, 在 IRC 频道和 Github 上多方交流都未能解决. 虽然现在这些问题看起来都没什么了, 不过这里我还是建议大家自己获取<a href="https://github.com/ImageMagick/ImageMagick" target="_blank" rel="external">源码</a>来编译, 因为 ./configure 过程中有一些参数需要配置的, 使用 brew 指定的话, 我目前还没有亲测过.</p>
 <p>这里放送上我的操作步骤:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git clone git@github.com:ImageMagick/ImageMagick.git</div><div class="line">cd ImageMagick</div><div class="line">./configure --prefix=/path/to/install/dir/ImageMagickInstall --without-x --without-webp --without-xml --without-tiff --without-jpeg --with-png  --enable-shared=yes --enable-static=yes --enable-zero-configuration</div><div class="line">make</div><div class="line">make install</div></pre></td></tr></table></figure></p>
 <p>注意几个地方:</p>
