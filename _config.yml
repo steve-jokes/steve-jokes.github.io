@@ -18,8 +18,10 @@ baidusitemap:
   path: baidusitemap.xml
 
 
-duoshuo_shortname: memphisw
-duoshuo_share: true
+#duoshuo_shortname: memphisw
+#duoshuo_share: true
+disqus_shortname: memphis-talk
+
 baidu_analytics: aca4acbcea6156f67675c1464ba1c800
 
 #RSS
