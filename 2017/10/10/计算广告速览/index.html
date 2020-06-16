@@ -1,0 +1,971 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="笔记,计算广告,费曼讲解," />
+
+
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="Memphis' Talk" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="2017 年我进入 Avid.ly, 一家数据驱动的海外发行公司, 因为业务的需要我接触了 Computational Advertising 计算广告 (互联网商业变现的市场与技术) 这本书, 让我对目前广告行业生态的全貌有了一个比较完整的认识. 当然这本书中对于技术部分的描述比较简略, 涉及到具体技术细节的部分对普通吃瓜群众来说又有些艰深, 需要比较扎实的数学背景来理解. 所以目前这本书我比较">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算广告速览">
+<meta property="og:url" content="http://www.memphis.wang/2017/10/10/计算广告速览/index.html">
+<meta property="og:site_name" content="Memphis' Talk">
+<meta property="og:description" content="2017 年我进入 Avid.ly, 一家数据驱动的海外发行公司, 因为业务的需要我接触了 Computational Advertising 计算广告 (互联网商业变现的市场与技术) 这本书, 让我对目前广告行业生态的全貌有了一个比较完整的认识. 当然这本书中对于技术部分的描述比较简略, 涉及到具体技术细节的部分对普通吃瓜群众来说又有些艰深, 需要比较扎实的数学背景来理解. 所以目前这本书我比较">
+<meta property="og:updated_time" content="2017-10-10T13:12:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算广告速览">
+<meta name="twitter:description" content="2017 年我进入 Avid.ly, 一家数据驱动的海外发行公司, 因为业务的需要我接触了 Computational Advertising 计算广告 (互联网商业变现的市场与技术) 这本书, 让我对目前广告行业生态的全貌有了一个比较完整的认识. 当然这本书中对于技术部分的描述比较简略, 涉及到具体技术细节的部分对普通吃瓜群众来说又有些艰深, 需要比较扎实的数学背景来理解. 所以目前这本书我比较">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.memphis.wang/2017/10/10/计算广告速览/"/>
+
+
+
+
+
+  <title> 计算广告速览 | Memphis' Talk </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?aca4acbcea6156f67675c1464ba1c800";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Memphis' Talk</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">and the world he knows</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://www.memphis.wang/2017/10/10/计算广告速览/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Memphis.W">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.webp">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Memphis' Talk">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Memphis' Talk" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                计算广告速览
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-10T21:12:27+08:00">
+                2017-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">读书笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书笔记/行业/" itemprop="url" rel="index">
+                    <span itemprop="name">行业</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书笔记/行业/计算广告/" itemprop="url" rel="index">
+                    <span itemprop="name">计算广告</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/10/计算广告速览/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/10/10/计算广告速览/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/10/10/计算广告速览/" class="leancloud_visitors" data-flag-title="计算广告速览">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>2017 年我进入 Avid.ly, 一家数据驱动的海外发行公司, 因为业务的需要我接触了 <a href="https://www.amazon.cn/dp/B017CW7IC6/" target="_blank" rel="external">Computational Advertising 计算广告 (互联网商业变现的市场与技术)</a> 这本书, 让我对目前广告行业生态的全貌有了一个比较完整的认识. 当然这本书中对于技术部分的描述比较简略, 涉及到具体技术细节的部分对普通吃瓜群众来说又有些艰深, 需要比较扎实的数学背景来理解. 所以目前这本书我比较喜欢, 同时也最易于理解的部分是对当前互联网商业变现市场的描述, 也诞生了我这篇希望小白也能迅速理解的删减版速览. 推荐广告行业新人阅读, 有助于规范一些概念和专有名词, 便于行业交流.</p>
+<a id="more"></a>
+<h1 id="什么是广告"><a href="#什么是广告" class="headerlink" title="什么是广告"></a>什么是广告</h1><h2 id="广告的定义"><a href="#广告的定义" class="headerlink" title="广告的定义"></a>广告的定义</h2><p>什么是广告呢, 计算广告原文引用了 &lt;&lt;当代广告学&gt;&gt; 中的形式化定义, 读起来特别恶心. 但其实转化成大白话来说就是 <strong>“关于产品的无人信息传播活动”</strong>. 展开来讲呢:</p>
+<ul>
+<li>这里的产品可以有多种形式, 可以是实物, 服务, 也可以是观点.</li>
+<li>传播活动中有个关键行为: 有人掏钱通过媒体完成上述活动</li>
+<li>通常是有偿的, 有组织的, 综合的, 劝服性的 (这个可以后续慢慢体会)</li>
+</ul>
+<p>从这里便能看到广告活动中三个重要的角色: <strong>出资人, 媒体, 受众</strong>. 他们之间的利益博弈是广告活动的主线, 贯穿了广告产品演化的整个过程.</p>
+<h2 id="广告的分类"><a href="#广告的分类" class="headerlink" title="广告的分类"></a>广告的分类</h2><ul>
+<li>根据广告的投放目的来分, 可以分为两种<ul>
+<li><strong>品牌广告</strong>希望通过曝光和宣传接触大量用户, 提升品牌的中长期用户量;</li>
+<li><strong>效果广告</strong>则希望通过比较具有时效性的广告内容, 短期内就能够带来购买和转化行为.</li>
+</ul>
+</li>
+<li>根据广告的创意形式来分, 又有很多的表现形式<ul>
+<li><strong>横幅</strong></li>
+<li><strong>文字链</strong></li>
+<li><strong>富媒体</strong></li>
+<li><strong>视频</strong> (<em>插屏, 角标</em>)</li>
+<li><strong>社交</strong> (<em>Feeds Ads</em>)</li>
+<li><strong>移动广告形式</strong> (<em>插屏, 开屏</em>)</li>
+<li><strong>邮件定向营销</strong></li>
+<li>在这基础上, 也衍生出很多泛广告产品如 <strong>团购, 游戏联运, 返利</strong> 等, 本质上都是付费推广.</li>
+</ul>
+</li>
+</ul>
+<h1 id="广告发展"><a href="#广告发展" class="headerlink" title="广告发展"></a>广告发展</h1><p>在线广告的发展史上, 定向技术和交易形式是进化的一条主线. 这条线要从在线广告的起点开始说起:</p>
+<p>起初, ARPA 创造了天地, Tim Berners-Lee 说要有 WWW, 于是就有了 WWW. 神说 WWW 是好的, 可能那时候还没有那么多小黄书…</p>
+<p>随着互联网的发展, 在线媒体获得了不错的流量规模, 传统广告商仿佛看到了无数本全新的杂志封面等着他们去填充广告, 这时期线下的广告代理公司同网站直接合作, 按原来的 <strong>合约广告</strong> 模式对广告位进行采买: <em>采用合同约定的方式独占某一广告位的特定时段</em>. </p>
+<p>然而随着互联网媒体对利益最大化的追逐, 这种模式很快显得不够灵活. 互联网大佬们很快发现可以对不同的受众定向呈现不同的广告创意, 可以有效扩展广告行业的效果和规模. 这时的定向广告仍然以合约的方式进行, 但合同的内容发生了变化, 媒体仅仅向广告主担保一定的投放量, 并协商未达成的赔偿方案, 由媒体自己自由地控制广告的投放行为. 此时媒体可以手握多份合约, 合理分配流量谋取最大的利益.</p>
+<p>随着定向标签变得越来越精准, 广告主的数量不断膨胀, 这种方式也遇到了越来越多的麻烦. 这时邪恶的 Google 公司推出了史上最唯利是图的策略– <strong>竞价广告</strong>, 通过拍卖关键词或标签, 撮合供给需求双方的交易. 还引入了广义第二高价理论, 使市场充分竞争活跃的情况下还能够保持一定的均衡. 从这以后, 计算广告逐渐开始走上舞台, 变成一门显学.</p>
+<p>有零售的地方肯定就会有辛劳的代理商, 为供需两头提供便利服务, 从中闷声赚大钱. 基于竞价机制和精准人群定向两个核心功能, 在线广告中出现了 <strong>广告网络</strong> 这个市场形态, 我更喜欢认为它是一个代理商形态. 广告网络从媒体那儿批发大量广告位资源回来, 自己做好标签的归类, 用竞价的方式卖给广告主, 从中获得差价.</p>
+<p>历史的发展总是惊人的相似, 虽然广告网络为供需双方提供给了便利的服务, 但是它的内部逻辑的封闭的, 无法满足供需双方越来越明确的诉求. 反过来这时候又希望有种直销形式, 而且还”没有中间商赚差价”. 于是在线广告居然出现了广告交易所! 对的, 就和你想象中的股票证券交易所一样, 使用开放的竞价逻辑, 让买卖双方在同一个平台上自由地 <strong>实时竞价</strong>. 开放的信息使得广告主在采买广告位时能够采取一些广告计算技术优化自己的商业行为.</p>
+<p>更进一步地, 由于广告交易平台使用了开放的竞价逻辑, 同时还提供了规范化的程序接口. 使得整个流程的自动化成为可能, 可以在用户每次请求广告的时候, 实时地发起一次竞价过程, 获得广告展示. 这种程序化交易方式使得广告交易越来越多地依赖机器间的协商而不是事先约定或人工操作来完成.</p>
+<p>所以, 计算广告在现代的广告活动中, 承担起了非常重要的角色.</p>
+<h1 id="计算广告"><a href="#计算广告" class="headerlink" title="计算广告"></a>计算广告</h1><p>计算广告的核心问题, 是为不同的用户和使用场景,找到最合适的广告投放策略.要理解这个问题, 需要理解广告是如何产生效果的. 按照广告领域前人研究出的广告有效性原则, 可以对一个广告信息如何被受众接收建立这样一个模型:</p>
+<ul>
+<li>exposure: 曝光阶段, 主要侧重于客观上的广告展示时机;</li>
+<li>attention: 关注阶段, 受众知觉到了有这个广告的存在;</li>
+<li>comprehension: 理解阶段, 受众不但意识到了这个广告, 还理解了传播的内容;</li>
+<li>acceptance: 接受阶段, 受众在理解的基础上认可了广告的宣传, 觉得 “这是真~的, 这不是梦~”;</li>
+<li>retention: 保持阶段, 大概是被洗脑了, 受众的意识中对此广告留下了长期的记忆;</li>
+<li>decision: 决策阶段, 这是用户转化的落地阶段</li>
+</ul>
+<p>在此模型中, 越靠后的阶段对产品的转化率越重要, 但往往也跟产品本身的质量有关, 越靠前的阶段则和广告的点击率相关, 这是计算广告可以着重优化的部分. 在实践中, 通常使用千次展示期望收入来衡量广告的盈利情况:</p>
+<blockquote>
+<p>expectedCostPerMille = revenue(ad, user, context) = ctr(a,u,c) * value(a,u,c)</p>
+</blockquote>
+<p>在此期间, 计算有很大的空间可以发挥, 如:</p>
+<ul>
+<li>确定受众定向, 通过对用户历史数据的分析, 对用户受众做聚类或标签化处理. 能够从不同的用户特征, 如地域或行为等方面做出定向</li>
+<li>流量预测, 通过计算可以准确预测出各个人群标签的流量</li>
+<li>在线流量分配, 通过实时计算, 当同一次曝光有多个广告满足时, 做出决策</li>
+<li>流量塑形, 通过计算还可以主动地影响流量</li>
+<li>点击率预测, 通过机器学习获得对点击率的预测模型, 获得一次展示对应不同广告的点击率</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/笔记/" rel="tag"># 笔记</a>
+          
+            <a href="/tags/计算广告/" rel="tag"># 计算广告</a>
+          
+            <a href="/tags/费曼讲解/" rel="tag"># 费曼讲解</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/19/Qt-集成-ImageMagick-实录/" rel="next" title="Qt 集成 ImageMagick 实录">
+                <i class="fa fa-chevron-left"></i> Qt 集成 ImageMagick 实录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.webp"
+               alt="Memphis.W" />
+          <p class="site-author-name" itemprop="name">Memphis.W</p>
+          <p class="site-description motion-element" itemprop="description">誰說不能讓我此生唯一自傳, 如同詩一般</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/steve-jokes" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/RunLittleRabbitRun" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ryeeeeee.com/" title="Ryeeeeee" target="_blank">Ryeeeeee</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://strawdog.top/" title="Chris Ye" target="_blank">Chris Ye</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是广告"><span class="nav-number">1.</span> <span class="nav-text">什么是广告</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#广告的定义"><span class="nav-number">1.1.</span> <span class="nav-text">广告的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#广告的分类"><span class="nav-number">1.2.</span> <span class="nav-text">广告的分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#广告发展"><span class="nav-number">2.</span> <span class="nav-text">广告发展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算广告"><span class="nav-number">3.</span> <span class="nav-text">计算广告</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Memphis.W</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'memphis-talk';
+      var disqus_identifier = '2017/10/10/计算广告速览/';
+
+      var disqus_title = "计算广告速览";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("EWpp4D6zzqG5OmJMFM9e8wn8-gzGzoHsz", "Mkms4nBRwfI1ag280IeTEjeO");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>

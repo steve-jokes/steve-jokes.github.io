@@ -8,8 +8,22 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>誰說不能讓我此生唯一自傳, 如同詩一般</description>
-    <pubDate>Wed, 19 Jul 2017 08:59:09 GMT</pubDate>
+    <pubDate>Tue, 10 Oct 2017 13:12:27 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>计算广告速览</title>
+      <link>http://www.memphis.wang/2017/10/10/%E8%AE%A1%E7%AE%97%E5%B9%BF%E5%91%8A%E9%80%9F%E8%A7%88/</link>
+      <guid>http://www.memphis.wang/2017/10/10/%E8%AE%A1%E7%AE%97%E5%B9%BF%E5%91%8A%E9%80%9F%E8%A7%88/</guid>
+      <pubDate>Tue, 10 Oct 2017 13:12:27 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;2017 年我进入 Avid.ly, 一家数据驱动的海外发行公司, 因为业务的需要我接触了 &lt;a href=&quot;https://www.amazon.cn/dp/B017CW7IC6/&quot;&gt;Computational Advertising 计算广告 (互联网商业变现的市场与技术)&lt;/a&gt; 这本书, 让我对目前广告行业生态的全貌有了一个比较完整的认识. 当然这本书中对于技术部分的描述比较简略, 涉及到具体技术细节的部分对普通吃瓜群众来说又有些艰深, 需要比较扎实的数学背景来理解. 所以目前这本书我比较喜欢, 同时也最易于理解的部分是对当前互联网商业变现市场的描述, 也诞生了我这篇希望小白也能迅速理解的删减版速览. 推荐广告行业新人阅读, 有助于规范一些概念和专有名词, 便于行业交流.&lt;/p&gt;
+      
+      </description>
+      
+      <comments>http://www.memphis.wang/2017/10/10/%E8%AE%A1%E7%AE%97%E5%B9%BF%E5%91%8A%E9%80%9F%E8%A7%88/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Qt 集成 ImageMagick 实录</title>
